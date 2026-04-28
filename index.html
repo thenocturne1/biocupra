@@ -1,25 +1,19 @@
-Hier ist das angepasste HTML für die **Régénérer**-Seite.
-
-Die wichtigsten Änderungen:
-1.  **Titel über dem Bild:** Der Haupttitel "Régénérer" steht nun oberhalb des Hero-Bildes.
-2.  **Stärkere Typografie:** Die Schriftgewichte (Font-Weight) wurden von "Light (300)" auf "Regular (400)" angehoben, um kräftiger und lesbarer zu wirken.
-
-```html
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Régénérer — BIOCUPRA</title>
+    <title>BIOCUPRA — The Science of Skin</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --color-text: #1a1a1a;
             --color-bg: #ffffff;
-            --color-grey: #666; /* Dunkleres Grau für bessere Lesbarkeit */
+            --color-grey: #888;
             --color-light-grey: #f9f9f9;
+            --color-border: #eee;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -28,366 +22,519 @@ Die wichtigsten Änderungen:
             font-family: 'Inter', sans-serif;
             background: var(--color-bg);
             color: var(--color-text);
-            line-height: 1.5;
+            line-height: 1.4;
         }
 
         img { max-width: 100%; display: block; }
         a { text-decoration: none; color: inherit; }
+        button { background: none; border: none; cursor: pointer; font-family: inherit; }
 
-        /* --- HEADER --- */
+        /* --- CONTAINER FOR DESKTOP --- */
+        .main-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            /* Schatten für große Screens, damit sich der Inhalt abhebt */
+            box-shadow: 0 0 30px rgba(0,0,0,0.05);
+        }
+
+        /* --- HEADER DESKTOP & MOBILE --- */
         .site-header {
             background: var(--color-bg);
             padding: 20px 0;
             text-align: center;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid var(--color-border);
             position: sticky;
             top: 0;
             z-index: 100;
         }
-        .logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; letter-spacing: 0.15em; font-weight: 500; text-transform: uppercase; display: block; line-height: 1; }
-        .logo-sub { display: block; font-size: 9px; letter-spacing: 0.4em; font-weight: 600; color: #888; margin-top: 5px; text-transform: uppercase; }
         
-        /* --- HERO TITLE OVER IMAGE (New Layout) --- */
-        .hero-intro {
-            padding: 60px 20px 40px;
-            text-align: center;
-            background: var(--color-bg);
-        }
+        .logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; letter-spacing: 0.15em; font-weight: 400; text-transform: uppercase; display: block; line-height: 1; }
+        .logo-sub { display: block; font-size: 9px; letter-spacing: 0.4em; font-weight: 500; color: #888; margin-top: 5px; text-transform: uppercase; }
+        .logo-tagline { display: block; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 12px; color: #555; margin-top: 4px; }
 
-        /* TITEL DICKER (User Request) */
-        .main-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 56px;
-            font-weight: 500; /* Stärker (vorher 300) */
-            line-height: 1.1;
-            margin-bottom: 20px;
-            color: var(--color-text);
+        /* Desktop Navigation (Versteckt auf Handy) */
+        .desktop-nav {
+            display: none; /* Standardmäßig ausgeblendet */
+            margin-top: 20px;
+            border-top: 1px solid var(--color-border);
+            padding-top: 15px;
+        }
+        
+        .desktop-nav a {
+            margin: 0 20px;
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-grey);
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+        .desktop-nav a:hover { color: var(--color-text); }
+
+        /* --- HERO LAYOUT --- */
+        .hero-image-container {
+            width: 100%;
+            height: 65vh;
+            min-height: 450px;
+            background: #f4f4f4;
+            overflow: hidden;
+        }
+        .hero-image-container img { width: 100%; height: 100%; object-fit: cover; }
+
+        .hero-text-section {
+            background: var(--color-bg);
+            padding: 60px 20px 80px;
+            text-align: center;
         }
 
         .eyebrow {
-            font-size: 11px;
-            font-weight: 500; /* Stärker */
-            letter-spacing: 0.25em;
+            font-size: 10px;
+            font-weight: 300;
+            letter-spacing: 0.15em;
             text-transform: uppercase;
             color: var(--color-grey);
             margin-bottom: 20px;
             display: block;
         }
 
-        /* --- HERO IMAGE --- */
-        .hero-detail {
-            position: relative;
-            width: 100%;
-            height: 60vh; /* Etwas kleiner, da Titel darüber ist */
-            min-height: 400px;
-            background: #f4f4f4;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .hero-detail img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* --- CONTENT SECTIONS --- */
-        .content-section {
-            padding: 80px 20px;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .content-image-block {
-            width: 100%;
-            margin-bottom: 60px;
-        }
-
-        /* FLIESSTEXT DICKER (User Request) */
-        .body-text {
-            font-size: 15px;
-            line-height: 1.7;
-            color: #444;
-            font-weight: 400; /* Stärker (vorher 300) */
-            margin-bottom: 20px;
-        }
-
-        .section-title {
+        .main-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 40px;
-            font-weight: 500; /* Stärker */
-            line-height: 1.2;
+            font-size: 70px;
+            font-weight: 300;
+            line-height: 1;
             margin-bottom: 30px;
+            color: var(--color-text);
         }
 
-        /* --- VIDEO SECTION --- */
-        .video-section {
-            position: relative;
-            width: 100%;
-            height: 50vh;
-            min-height: 350px;
-            background: #000;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 60px 0;
-        }
-        
-        .video-placeholder {
-            position: absolute;
-            inset: 0;
-            opacity: 0.6;
-        }
-        .video-placeholder img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .play-button {
-            z-index: 10;
-            width: 70px;
-            height: 70px;
-            border: 1px solid white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-        .play-button:hover { transform: scale(1.1); background: rgba(255,255,255,0.1); }
-        .play-icon { width: 0; height: 0; border-left: 20px solid white; border-top: 12px solid transparent; border-bottom: 12px solid transparent; margin-left: 5px; }
-
-        /* --- PRODUCT GRID --- */
-        .product-focus-section {
-            padding: 80px 20px;
-            background: var(--color-light-grey);
-        }
-
-        .focus-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 60px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        @media(min-width: 768px) {
-            .focus-grid { grid-template-columns: 1fr 1fr; }
-        }
-
-        .focus-item {
-            text-align: center;
-        }
-
-        .focus-image {
-            width: 100%;
-            height: 350px;
-            background: white;
-            margin-bottom: 30px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .focus-image img { max-height: 90%; max-width: 90%; object-fit: contain; }
-
-        .focus-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 28px;
-            margin-bottom: 15px;
-            font-weight: 500; /* Stärker */
-        }
-
-        .btn-text {
+        .btn-outline {
             display: inline-block;
-            font-size: 11px;
-            font-weight: 600; /* Stärker */
+            padding: 12px 30px;
+            font-size: 10px;
+            font-weight: 500;
             letter-spacing: 0.15em;
             text-transform: uppercase;
             color: var(--color-text);
-            border-bottom: 1px solid var(--color-text);
-            margin-top: 15px;
-            padding-bottom: 2px;
+            border: 1px solid var(--color-text);
+            background: transparent;
+            transition: all 0.3s;
+            margin-top: 10px;
         }
+        .btn-outline:hover { background: var(--color-text); color: #fff; }
 
-        /* --- INGREDIENTS --- */
-        .ingredients-scroll {
-            padding: 40px 0;
-            background: white;
+        /* --- EDITORIAL BLOCK --- */
+        .editorial-block {
+            padding-top: 60px;
         }
-        .scroll-track {
-            display: flex;
-            gap: 30px;
-            overflow-x: auto;
-            padding: 0 20px 20px;
-            -webkit-overflow-scrolling: touch;
-        }
-        .scroll-track::-webkit-scrollbar { display: none; }
         
-        .ingredient-card {
-            flex: 0 0 250px;
+        .editorial-image {
+            width: 100%;
+            height: 500px; /* Feste Höhe für Desktop */
+            background: #eee;
+            margin-bottom: 40px;
+        }
+        .editorial-image img { width: 100%; height: 100%; object-fit: cover; }
+
+        .editorial-text {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 20px;
             text-align: center;
         }
-        .ingredient-icon {
-            width: 80px;
-            height: 80px;
-            background: #f4f4f4;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
+
+        .editorial-title {
             font-family: 'Cormorant Garamond', serif;
+            font-size: 40px;
+            font-weight: 300;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .body-text {
+            font-size: 15px;
+            line-height: 1.4;
+            color: #555;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        /* Toggle */
+        .text-toggle input { display: none; }
+        .toggle-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-bottom: 1px solid var(--color-text);
+            padding-bottom: 2px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .toggle-content { display: none; margin-top: 20px; }
+        .text-toggle input:checked + label { display: none; }
+        .text-toggle input:checked ~ .toggle-content { display: block; }
+        .text-toggle input:checked ~ .close-label { display: inline-block; margin-top: 20px; }
+        .close-label { display: none; font-size: 11px; font-weight: 600; cursor: pointer; border-bottom: 1px solid var(--color-text); padding-bottom: 2px; }
+
+        /* --- PRODUCTS GRID (DESKTOP ANPASSUNG) --- */
+        .products-section { background: var(--color-light-grey); padding: 80px 20px; }
+        .section-title-center { font-family: 'Cormorant Garamond', serif; font-size: 40px; text-align: center; margin-bottom: 40px; font-weight: 300; }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Handy: 2 Spalten */
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .product-card {
+            background: white;
+            padding: 40px 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-title { font-family: 'Cormorant Garamond', serif; font-size: 28px; margin-bottom: 10px; font-weight: 400; }
+        .product-tag { font-size: 10px; color: #4a90e2; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px; display: block; }
+        .product-desc { font-size: 13px; color: #666; margin-bottom: 20px; line-height: 1.4; }
+
+        /* --- INSPIRATIONS (DESKTOP GRID) --- */
+        .inspirations-section { padding: 80px 20px; background: white; }
+        
+        /* Wrapper erlaubt Scroll auf Handy, aber Grid auf Desktop */
+        .scroll-wrapper {
+            overflow-x: auto; /* Handy Scroll */
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        .scroll-wrapper::-webkit-scrollbar { display: none; }
+
+        .scroll-track {
+            display: flex; /* Handy Flex Scroll */
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        .insp-card {
+            flex: 0 0 85vw; /* Handy Breite */
+            max-width: 500px;
+            scroll-snap-align: center;
+            background: white;
+            border: 1px solid var(--color-border); /* Rand auf Desktop */
+        }
+        
+        .insp-img {
+            height: 350px;
+            width: 100%;
+            background: #eee;
+            margin-bottom: 0; /* Abstand unten weg auf Desktop */
+            overflow: hidden;
+        }
+        .insp-img img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .insp-content {
+            padding: 30px 20px;
+            text-align: center;
         }
 
         /* --- FOOTER --- */
+        .newsletter-section {
+            background: var(--color-text);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .newsletter-section h3 { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 300; margin-bottom: 20px; }
+        .input-row {
+            display: flex;
+            justify-content: center;
+            border: 1px solid rgba(255,255,255,0.3);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        input[type="email"] { background: transparent; border: none; padding: 12px; color: white; flex: 1; font-size: 12px; }
+        input::placeholder { color: rgba(255,255,255,0.5); }
+        .btn-white { background: white; color: black; font-size: 10px; padding: 12px 20px; text-transform: uppercase; font-weight: 700; border: none; }
+
         .site-footer {
             padding: 40px 20px;
             text-align: center;
-            border-top: 1px solid #eee;
         }
+        .footer-links a { display: inline-block; margin: 0 15px; font-size: 12px; color: #666; }
+        .dhl-logo { margin-top: 30px; color: #d40511; font-weight: 700; letter-spacing: -1px; font-size: 18px; }
 
-        @media (max-width: 768px) {
-            .main-title { font-size: 42px; }
-            .section-title { font-size: 32px; }
+        /* --- STICKY NAV (NUR HANDY) --- */
+        .sticky-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: space-around;
+            padding: 12px 0;
+            z-index: 1000;
+        }
+        .nav-icon svg { width: 22px; height: 22px; stroke: black; }
+
+        /* =========================================
+           DESKTOP RESPONSIVE (ab 1024px)
+           ========================================= */
+        @media (min-width: 1024px) {
+            /* Desktop Navigation einblenden */
+            .desktop-nav { display: block; }
+
+            /* Mobile Nav ausblenden */
+            .sticky-nav { display: none; }
+
+            /* Produkte: 4 Spalten wie im Screenshot */
+            .products-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+                padding: 0;
+            }
+
+            /* Produkt-Karte Hover Effekt */
+            .product-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            }
+
+            /* Inspirations: Grid statt Scroll */
+            .scroll-wrapper {
+                overflow-x: visible; /* Scroll deaktivieren */
+            }
+            
+            .scroll-track {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr); /* 3 Spalten */
+                gap: 30px;
+                padding: 0;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .insp-card {
+                width: 100%;
+                max-width: none;
+                display: block;
+            }
+
+            /* Bildern Höhen anpassen */
+            .editorial-image {
+                height: 600px;
+            }
+            
+            /* Textbreiten für Lesbarkeit */
+            .editorial-text {
+                padding: 0;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header class="site-header">
-        <a href="index.html" class="logo">BIOCUPRA<sup>&reg;</sup></a>
-        <span class="logo-sub">BERLIN</span>
-    </header>
-
-    <!-- TITEL ÜBER DEM BILD (User Request) -->
-    <section class="hero-intro">
-        <span class="eyebrow">Die Wissenschaft der Erneuerung</span>
-        <h1 class="main-title">Régénérer</h1>
-    </section>
-
-    <!-- HERO IMAGE -->
-    <section class="hero-detail">
-        <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=1920&auto=format&fit=crop" alt="Régénérer Visual">
-    </section>
-
-    <!-- INTRO TEXT -->
-    <section class="content-section">
-        <p class="body-text">
-            Régénérer ist mehr als eine Produktlinie. Es ist eine Hommage an die biologische Fähigkeit der Haut, sich selbst zu reparieren. Im Zentrum steht ein Molekül, das die Dermatologie seit Jahrzehnten fasziniert: GHK-Cu.
-        </p>
-        <p class="body-text">
-            Diese Seite widmet sich der Wissenschaft, den Inhaltsstoffen und dem Ritual, das Ihre Haut wieder in ihren natürlichen Zustand der Balance und Kraft zurückversetzt.
-        </p>
-    </section>
-
-    <!-- IMAGE BLOCK -->
-    <div class="content-image-block">
-        <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=1200&auto=format&fit=crop" alt="Labor Ästhetik">
-    </div>
-
-    <!-- DEEP DIVE: THE MOLECULE -->
-    <section class="content-section">
-        <h2 class="section-title">Das Molekül GHK-Cu</h2>
-        <p class="body-text">
-            Was wäre, wenn wir der Haut ein Signal senden könnten, sich zu verjüngen? Genau das tut das kupferbindende Tripeptid GHK-Cu. Es ist eine Aminosäurensequenz, die natürlich im menschlichen Plasma vorkommt – und mit dem Alter abnimmt.
-        </p>
-        <p class="body-text">
-            <strong>Der Mechanismus:</strong> GHK-Cu aktiviert Fibroblasten, die für die Kollagenproduktion verantwortlich sind, und regt gleichzeitig die Synthese von Elastin und Glykosaminoglykanen an. Das Ergebnis ist eine dichtere, festere Hautstruktur von innen heraus.
-        </p>
-    </section>
-
-    <!-- VIDEO/GIF SECTION -->
-    <section class="video-section">
-        <div class="video-placeholder">
-            <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=1200&auto=format&fit=crop" alt="Wirkung Video">
-        </div>
-        <div class="play-button">
-            <div class="play-icon"></div>
-        </div>
-    </section>
-
-    <!-- TEXTURE & APPLICATION -->
-    <section class="content-section">
-        <span class="eyebrow">Anwendung & Gefühl</span>
-        <h2 class="section-title">Die Textur</h2>
-        <p class="body-text">
-            Wissenschaft muss sich nicht schwer anfühlen. Das Régénérer Serum zeichnet sich durch eine aqua-leichte Textur aus, die sofort absorbiert wird. Die charakteristische Blaufärbung – ein Zeichen für die Bindung des Kupfers – verblasst bei der Anwendung und hinterlässt kein sichtbares Residuum.
-        </p>
-    </section>
-
-    <!-- PRODUCTS DETAIL GRID -->
-    <section class="product-focus-section">
-        <div style="text-align: center; margin-bottom: 60px;">
-            <h2 class="section-title" style="margin-bottom: 0;">Die Essentials</h2>
-        </div>
+    <!-- Main Container für Desktop Zentrierung -->
+    <div class="main-container">
         
-        <div class="focus-grid">
-            <!-- Product 1 -->
-            <article class="focus-item">
-                <div class="focus-image">
-                    <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=600&auto=format&fit=crop" alt="Serum Bottle">
+        <!-- Top Banner -->
+        <div class="top-banner" style="background: #1a1a1a; color: white; text-align: center; padding: 8px; font-size: 10px; letter-spacing: 0.1em;">
+            Versandkostenfrei ab 30€
+        </div>
+
+        <!-- Header -->
+        <header class="site-header">
+            <h1 class="logo">BIOCUPRA<sup>&reg;</sup></h1>
+            <span class="logo-sub">BERLIN</span>
+            <span class="logo-tagline">THE SCIENCE OF SKIN</span>
+            
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <a href="#">Hautpflege</a>
+                <a href="#">Serum</a>
+                <a href="#">Ritual</a>
+                <a href="#">Wissenschaft</a>
+                <a href="#">Über Uns</a>
+            </nav>
+        </header>
+
+        <!-- HERO -->
+        <section>
+            <div class="hero-image-container">
+                <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=1920&auto=format&fit=crop" alt="BIOCUPRA Visual">
+            </div>
+            <div class="hero-text-section">
+                <span class="eyebrow">ENTWICKELT FÜR DIE BESONDEREN ANSPRÜCHE MODERNER HAUT</span>
+                <h2 class="main-title">Régénérer</h2>
+                <a href="regenerer.html" class="btn-outline">Mehr erfahren</a>
+            </div>
+        </section>
+
+        <!-- PHILOSOPHY -->
+        <section class="editorial-block">
+            <div class="editorial-image">
+                <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=1200&auto=format&fit=crop" alt="Labor Ästhetik">
+            </div>
+            <div class="editorial-text">
+                <span class="eyebrow">Our Philosophy</span>
+                <h2 class="editorial-title">Keine Kompromisse</h2>
+                <p class="body-text">Wir haben BIOCUPRA aus einem einzigen Grund gegründet: Zu viele Hautpflegemarken machen Versprechen, die ihre Formeln nicht halten können. GHK-Cu ist kein Trend-Inhaltsstoff.</p>
+                <div class="text-toggle">
+                    <input type="checkbox" id="toggle-phil">
+                    <label for="toggle-phil" class="toggle-label">Mehr erfahren</label>
+                    <div class="toggle-content">
+                        <p class="body-text">BIOCUPRA wurde um dieses Molekül herum aufgebaut. Jede Produktentscheidung — Konzentration, Abgabesystem, Verpackung — dient dazu, seine Wirksamkeit zu schützen und zu maximieren. Kein Duft. Keine Füllstoffe. Kein Kompromiss.</p>
+                    </div>
+                    <label for="toggle-phil" class="close-label">Weniger anzeigen</label>
                 </div>
-                <h3 class="focus-title">Copper Peptide Serum</h3>
-                <p class="body-text">
-                    Das Herzstück. Hochdosiertes GHK-Cu in einem Airless-System. Die blaue Flüssigkeit ist der Beweis der Reinheit.
-                </p>
-                <a href="#" class="btn-text">zum Produkt</a>
-            </article>
+            </div>
+        </section>
 
-            <!-- Product 2 -->
-            <article class="focus-item">
-                <div class="focus-image">
-                    <img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?q=80&w=600&auto=format&fit=crop" alt="Cream Jar">
+        <!-- PRODUCTS -->
+        <section class="products-section">
+            <h2 class="section-title-center">BIOCUPRA Bestseller</h2>
+            <div class="products-grid">
+                <!-- Produkt 1 -->
+                <div class="product-card">
+                    <span class="product-tag">Konzentrat</span>
+                    <h3 class="product-title">GHK-Cu Serum</h3>
+                    <p class="product-desc">Der Kern von BIOCUPRA. Klinisch relevante Konzentration. Die Blautönung ist der Beweis für Wirkstoffintegrität.</p>
+                    <a href="regenerer.html" class="btn-outline" style="padding: 10px 20px;">zum Produkt</a>
                 </div>
-                <h3 class="focus-title">Restoring Cream</h3>
-                <p class="body-text">
-                    Symbiose aus Schutz und Pflege. Eine leichte Barriere-Creme, die die Wirkstoffe des Serums einschließt.
-                </p>
-                <a href="#" class="btn-text">zum Produkt</a>
-            </article>
-        </div>
-    </section>
+                <!-- Produkt 2 -->
+                <div class="product-card">
+                    <span class="product-tag">Feuchtigkeit</span>
+                    <h3 class="product-title">Moisturizing Cream</h3>
+                    <p class="product-desc">Entwickelt für Synergie mit dem Serum. Barrierestärkend, duftfrei und oxidationsgeschützt.</p>
+                    <a href="regenerer.html" class="btn-outline" style="padding: 10px 20px;">zum Produkt</a>
+                </div>
+                <!-- Produkt 3 (Platzhalter für Desktop Füllung) -->
+                <div class="product-card">
+                    <span class="product-tag">Ritual</span>
+                    <h3 class="product-title">Set Régénérer</h3>
+                    <p class="product-desc">Die perfekte Kombination aus Serum und Creme für die vollständige Regeneration.</p>
+                    <a href="regenerer.html" class="btn-outline" style="padding: 10px 20px;">zum Produkt</a>
+                </div>
+                <!-- Produkt 4 -->
+                <div class="product-card">
+                    <span class="product-tag">Wirkstoff</span>
+                    <h3 class="product-title">GHK-Cu Ampullen</h3>
+                    <p class="product-desc">Hochkonzentrierte Intensivkur für einen strapazierten Hautschutzschild.</p>
+                    <a href="regenerer.html" class="btn-outline" style="padding: 10px 20px;">zum Produkt</a>
+                </div>
+            </div>
+        </section>
 
-    <!-- INGREDIENTS HORIZONTAL SCROLL -->
-    <section class="ingredients-scroll">
-        <div style="text-align: center; margin-bottom: 30px;">
-            <span class="eyebrow">Wirkstoffe</span>
-        </div>
-        <div class="scroll-track">
-            <div class="ingredient-card">
-                <div class="ingredient-icon">Cu</div>
-                <h3 class="focus-title" style="font-size: 24px;">GHK-Cu</h3>
-                <p class="body-text" style="font-size: 14px;">Kupferpeptid-Komplex für Kollagen-Synthese.</p>
+        <!-- MOLECULE -->
+        <section class="editorial-block">
+            <div class="editorial-image">
+                <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=1200&auto=format&fit=crop" alt="Molekülstruktur">
             </div>
-            <div class="ingredient-card">
-                <div class="ingredient-icon">H₂O</div>
-                <h3 class="focus-title" style="font-size: 24px;">Hydration</h3>
-                <p class="body-text" style="font-size: 14px;">Hyaluronsäure für sofortige Feuchtigkeit.</p>
+            <div class="editorial-text">
+                <span class="eyebrow">The Molecule</span>
+                <h2 class="editorial-title">GHK-Cu</h2>
+                <p class="body-text">Was GHK-Cu außergewöhnlich macht, ist seine doppelte Rolle: Es stimuliert und reguliert zugleich. Es aktiviert Fibroblasten zur Produktion von neuem Kollagen.</p>
+                <div class="text-toggle">
+                    <input type="checkbox" id="toggle-science">
+                    <label for="toggle-science" class="toggle-label">Mehr erfahren</label>
+                    <div class="toggle-content">
+                        <p class="body-text">Die charakteristische Blaufärbung — verursacht durch das an das Peptid gebundene Kupferion — ist ein einfaches Qualitätsmerkmal. Echte GHK-Cu-Lösungen sind blau. Unsere auch.</p>
+                    </div>
+                    <label for="toggle-science" class="close-label">Weniger anzeigen</label>
+                </div>
             </div>
-            <div class="ingredient-card">
-                <div class="ingredient-icon">N</div>
-                <h3 class="focus-title" style="font-size: 24px;">Niacinamid</h3>
-                <p class="body-text" style="font-size: 14px;">Stärkt die Barriere und den Teint.</p>
-            </div>
-            <div class="ingredient-card">
-                <div class="ingredient-icon">O</div>
-                <h3 class="focus-title" style="font-size: 24px;">Schutz</h3>
-                <p class="body-text" style="font-size: 14px;">Airless-System gegen Oxidation.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-        <p class="eyebrow">BIOCUPRA BERLIN</p>
-    </footer>
+        <!-- INSPIRATIONS -->
+        <section class="inspirations-section">
+            <div style="max-width: 1200px; margin: 0 auto;">
+                <h2 class="section-title-center" style="text-align: left; margin-bottom: 40px;">Inspirations</h2>
+            </div>
+            
+            <div class="scroll-wrapper">
+                <div class="scroll-track">
+                    
+                    <article class="insp-card">
+                        <div class="insp-img">
+                            <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=600&auto=format&fit=crop" alt="Ritual">
+                        </div>
+                        <div class="insp-content">
+                            <span class="eyebrow">Routine</span>
+                            <h3 class="editorial-title" style="font-size: 32px;">Das Ritual</h3>
+                            <p class="body-text">2–3 Tropfen Serum auf gereinigter Haut auftragen.</p>
+                            <a href="regenerer.html" class="btn-outline" style="margin-top: 15px;">Mehr erfahren</a>
+                        </div>
+                    </article>
+
+                    <article class="insp-card">
+                        <div class="insp-img">
+                            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=600&auto=format&fit=crop" alt="Blue Science">
+                        </div>
+                        <div class="insp-content">
+                            <span class="eyebrow">Qualität</span>
+                            <h3 class="editorial-title" style="font-size: 32px;">Why Blue?</h3>
+                            <p class="body-text">Die Blaufärbung ist der Beweis für den Wirkstoff.</p>
+                            <a href="regenerer.html" class="btn-outline" style="margin-top: 15px;">Mehr erfahren</a>
+                        </div>
+                    </article>
+
+                    <article class="insp-card">
+                        <div class="insp-img">
+                            <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=600&auto=format&fit=crop" alt="Texture">
+                        </div>
+                        <div class="insp-content">
+                            <span class="eyebrow">Biohacking</span>
+                            <h3 class="editorial-title" style="font-size: 32px;">No Compromise</h3>
+                            <p class="body-text">Wir folgen der Wissenschaft, nicht dem Trend.</p>
+                            <a href="regenerer.html" class="btn-outline" style="margin-top: 15px;">Mehr erfahren</a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- NEWSLETTER -->
+        <section class="newsletter-section">
+            <h3>Newsletter</h3>
+            <p class="body-text" style="color: rgba(255,255,255,0.8); margin-bottom: 30px;">Erhalte exklusive Einblicke in dermatologische Forschung.</p>
+            <form>
+                <div class="input-row">
+                    <input type="email" placeholder="Deine E-Mail">
+                    <button type="submit" class="btn-white">Abonnieren</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="site-footer">
+            <div class="footer-links">
+                <a href="#">Über Uns</a>
+                <a href="#">Wissenschaft</a>
+                <a href="#">Versand</a>
+                <a href="#">Impressum</a>
+                <a href="#">Datenschutz</a>
+            </div>
+            <div class="dhl-logo">DHL</div>
+        </footer>
+
+    </div><!-- End Main Container -->
+
+    <!-- STICKY NAV (NUR HANDY) -->
+    <nav class="sticky-nav">
+        <button class="nav-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M6 6L4 3H2"/></svg>
+        </button>
+        <button class="nav-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <button class="nav-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><line x1="16" y1="16" x2="21" y2="21"/></svg>
+        </button>
+    </nav>
 
 </body>
 </html>
-```
