@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Régénérer — BIOCUPRA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-text: #1a1a1a;
+            --color-bg: #ffffff;
+            --color-grey: #666; 
+            --color-light-grey: #f9f9f9;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.4; /* ENGER */
+        }
+
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; }
+
+        /* --- HEADER --- */
+        .site-header {
+            background: var(--color-bg);
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; letter-spacing: 0.15em; font-weight: 500; text-transform: uppercase; display: block; line-height: 1; }
+        .logo-sub { display: block; font-size: 9px; letter-spacing: 0.4em; font-weight: 600; color: #888; margin-top: 5px; text-transform: uppercase; }
+        
+        /* --- HERO TITLE OVER IMAGE --- */
+        .hero-intro {
+            padding: 60px 20px 40px;
+            text-align: center;
+            background: var(--color-bg);
+        }
+
+        /* TITEL DICKER & ENGER */
+        .main-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 56px;
+            font-weight: 500; 
+            line-height: 1; /* Sehr eng */
+            margin-bottom: 20px;
+            color: var(--color-text);
+            letter-spacing: -0.01em; /* Buchstaben enger */
+        }
+
+        .eyebrow {
+            font-size: 11px;
+            font-weight: 500; 
+            letter-spacing: 0.15em; /* ENGER: vorher 0.25em */
+            text-transform: uppercase;
+            color: var(--color-grey);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* --- HERO IMAGE --- */
+        .hero-detail {
+            position: relative;
+            width: 100%;
+            height: 60vh; 
+            min-height: 400px;
+            background: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-detail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* --- CONTENT SECTIONS --- */
+        .content-section {
+            padding: 80px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .content-image-block {
+            width: 100%;
+            margin-bottom: 60px;
+        }
+
+        /* FLIESSTEXT DICKER & ENGER */
+        .body-text {
+            font-size: 15px;
+            line-height: 1.4; /* ENGER */
+            color: #444;
+            font-weight: 400; 
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 40px;
+            font-weight: 500;
+            line-height: 1;
+            margin-bottom: 30px;
+            letter-spacing: -0.01em;
+        }
+
+        /* --- VIDEO SECTION --- */
+        .video-section {
+            position: relative;
+            width: 100%;
+            height: 50vh;
+            min-height: 350px;
+            background: #000;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 60px 0;
+        }
+        
+        .video-placeholder {
+            position: absolute;
+            inset: 0;
+            opacity: 0.6;
+        }
+        .video-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .play-button {
+            z-index: 10;
+            width: 70px;
+            height: 70px;
+            border: 1px solid white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .play-button:hover { transform: scale(1.1); background: rgba(255,255,255,0.1); }
+        .play-icon { width: 0; height: 0; border-left: 20px solid white; border-top: 12px solid transparent; border-bottom: 12px solid transparent; margin-left: 5px; }
+
+        /* --- PRODUCT GRID --- */
+        .product-focus-section {
+            padding: 80px 20px;
+            background: var(--color-light-grey);
+        }
+
+        .focus-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 60px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        @media(min-width: 768px) {
+            .focus-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        .focus-item {
+            text-align: center;
+        }
+
+        .focus-image {
+            width: 100%;
+            height: 350px;
+            background: white;
+            margin-bottom: 30px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .focus-image img { max-height: 90%; max-width: 90%; object-fit: contain; }
+
+        .focus-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            margin-bottom: 15px;
+            font-weight: 500; 
+        }
+
+        .btn-text {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-text);
+            border-bottom: 1px solid var(--color-text);
+            margin-top: 15px;
+            padding-bottom: 2px;
+        }
+
+        /* --- INGREDIENTS --- */
+        .ingredients-scroll {
+            padding: 40px 0;
+            background: white;
+        }
+        .scroll-track {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            padding: 0 20px 20px;
+            -webkit-overflow-scrolling: touch;
+        }
+        .scroll-track::-webkit-scrollbar { display: none; }
+        
+        .ingredient-card {
+            flex: 0 0 250px;
+            text-align: center;
+        }
+        .ingredient-icon {
+            width: 80px;
+            height: 80px;
+            background: #f4f4f4;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* --- FOOTER --- */
+        .site-footer {
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+
+        @media (max-width: 768px) {
+            .main-title { font-size: 42px; }
+            .section-title { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <a href="index.html" class="logo">BIOCUPRA<sup>&reg;</sup></a>
+        <span class="logo-sub">BERLIN</span>
+    </header>
+
+    <!-- TITEL ÜBER DEM BILD -->
+    <section class="hero-intro">
+        <span class="eyebrow">Die Wissenschaft der Erneuerung</span>
+        <h1 class="main-title">Régénérer</h1>
+    </section>
+
+    <!-- HERO IMAGE -->
+    <section class="hero-detail">
+        <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=1920&auto=format&fit=crop" alt="Régénérer Visual">
+    </section>
+
+    <!-- INTRO TEXT -->
+    <section class="content-section">
+        <p class="body-text">
+            Régénérer ist mehr als eine Produktlinie. Es ist eine Hommage an die biologische Fähigkeit der Haut, sich selbst zu reparieren. Im Zentrum steht ein Molekül, das die Dermatologie seit Jahrzehnten fasziniert: GHK-Cu.
+        </p>
+        <p class="body-text">
+            Diese Seite widmet sich der Wissenschaft, den Inhaltsstoffen und dem Ritual, das Ihre Haut wieder in ihren natürlichen Zustand der Balance und Kraft zurückversetzt.
+        </p>
+    </section>
+
+    <!-- IMAGE BLOCK -->
+    <div class="content-image-block">
+        <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=1200&auto=format&fit=crop" alt="Labor Ästhetik">
+    </div>
+
+    <!-- DEEP DIVE -->
+    <section class="content-section">
+        <h2 class="section-title">Das Molekül GHK-Cu</h2>
+        <p class="body-text">
+            Was wäre, wenn wir der Haut ein Signal senden könnten, sich zu verjüngen? Genau das tut das kupferbindende Tripeptid GHK-Cu. Es ist eine Aminosäurensequenz, die natürlich im menschlichen Plasma vorkommt – und mit dem Alter abnimmt.
+        </p>
+        <p class="body-text">
+            <strong>Der Mechanismus:</strong> GHK-Cu aktiviert Fibroblasten, die für die Kollagenproduktion verantwortlich sind, und regt gleichzeitig die Synthese von Elastin und Glykosaminoglykanen an. Das Ergebnis ist eine dichtere, festere Hautstruktur von innen heraus.
+        </p>
+    </section>
+
+    <!-- VIDEO SECTION -->
+    <section class="video-section">
+        <div class="video-placeholder">
+            <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=1200&auto=format&fit=crop" alt="Wirkung Video">
+        </div>
+        <div class="play-button">
+            <div class="play-icon"></div>
+        </div>
+    </section>
+
+    <!-- TEXTURE -->
+    <section class="content-section">
+        <span class="eyebrow">Anwendung & Gefühl</span>
+        <h2 class="section-title">Die Textur</h2>
+        <p class="body-text">
+            Wissenschaft muss sich nicht schwer anfühlen. Das Régénérer Serum zeichnet sich durch eine aqua-leichte Textur aus, die sofort absorbiert wird. Die charakteristische Blaufärbung – ein Zeichen für die Bindung des Kupfers – verblasst bei der Anwendung und hinterlässt kein sichtbares Residuum.
+        </p>
+    </section>
+
+    <!-- PRODUCTS GRID -->
+    <section class="product-focus-section">
+        <div style="text-align: center; margin-bottom: 60px;">
+            <h2 class="section-title" style="margin-bottom: 0;">Die Essentials</h2>
+        </div>
+        
+        <div class="focus-grid">
+            <!-- Product 1 -->
+            <article class="focus-item">
+                <div class="focus-image">
+                    <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=600&auto=format&fit=crop" alt="Serum Bottle">
+                </div>
+                <h3 class="focus-title">Copper Peptide Serum</h3>
+                <p class="body-text">
+                    Das Herzstück. Hochdosiertes GHK-Cu in einem Airless-System. Die blaue Flüssigkeit ist der Beweis der Reinheit.
+                </p>
+                <a href="#" class="btn-text">zum Produkt</a>
+            </article>
+
+            <!-- Product 2 -->
+            <article class="focus-item">
+                <div class="focus-image">
+                    <img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?q=80&w=600&auto=format&fit=crop" alt="Cream Jar">
+                </div>
+                <h3 class="focus-title">Restoring Cream</h3>
+                <p class="body-text">
+                    Symbiose aus Schutz und Pflege. Eine leichte Barriere-Creme, die die Wirkstoffe des Serums einschließt.
+                </p>
+                <a href="#" class="btn-text">zum Produkt</a>
+            </article>
+        </div>
+    </section>
+
+    <!-- INGREDIENTS -->
+    <section class="ingredients-scroll">
+        <div style="text-align: center; margin-bottom: 30px;">
+            <span class="eyebrow">Wirkstoffe</span>
+        </div>
+        <div class="scroll-track">
+            <div class="ingredient-card">
+                <div class="ingredient-icon">Cu</div>
+                <h3 class="focus-title" style="font-size: 24px;">GHK-Cu</h3>
+                <p class="body-text" style="font-size: 14px;">Kupferpeptid-Komplex für Kollagen-Synthese.</p>
+            </div>
+            <div class="ingredient-card">
+                <div class="ingredient-icon">H₂O</div>
+                <h3 class="focus-title" style="font-size: 24px;">Hydration</h3>
+                <p class="body-text" style="font-size: 14px;">Hyaluronsäure für sofortige Feuchtigkeit.</p>
+            </div>
+            <div class="ingredient-card">
+                <div class="ingredient-icon">N</div>
+                <h3 class="focus-title" style="font-size: 24px;">Niacinamid</h3>
+                <p class="body-text" style="font-size: 14px;">Stärkt die Barriere und den Teint.</p>
+            </div>
+            <div class="ingredient-card">
+                <div class="ingredient-icon">O</div>
+                <h3 class="focus-title" style="font-size: 24px;">Schutz</h3>
+                <p class="body-text" style="font-size: 14px;">Airless-System gegen Oxidation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <p class="eyebrow">BIOCUPRA BERLIN</p>
+    </footer>
+
+</body>
+</html>
