@@ -78,7 +78,6 @@
             overflow: visible; 
         }
 
-        /* HAUPTTITEL: Fett (600), vertikal gestapelt */
         .main-title {
             font-family: var(--font-elegant);
             font-size: 30px; 
@@ -92,7 +91,6 @@
             padding: 0 10px;
         }
 
-        /* Wörter untereinander */
         .main-title br {
             display: block;
             content: "";
@@ -100,9 +98,11 @@
         }
 
         .intro-text {
-            font-size: 15px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            line-height: 1.4;
             color: #555;
-            line-height: 1.5;
             font-weight: 400;
             max-width: 600px;
             margin: 0 auto;
@@ -117,12 +117,18 @@
             margin-bottom: 80px;
         }
 
+        .article-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
         .article-image-container {
             width: 100%;
-            height: 55vh;
-            min-height: 400px;
+            height: 50vh;
+            min-height: 350px;
             background: #eee;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             overflow: hidden;
         }
         .article-image-container img {
@@ -132,9 +138,6 @@
         }
 
         .article-content {
-            padding: 0 20px;
-            max-width: 800px;
-            margin: 0 auto;
             text-align: center;
         }
 
@@ -149,7 +152,6 @@
             display: block;
         }
 
-        /* ARTIKEL ÜBERSCHRIFTEN: Elegant, aber Normal Case */
         .article-title {
             font-family: var(--font-elegant);
             font-size: 42px;
@@ -160,9 +162,9 @@
             text-transform: none;
         }
 
-        /* FLIESSTEXT: Enger Zeilenabstand */
+        /* FLIESSTEXT: KLEINER (14px) */
         .article-body {
-            font-size: 16px; 
+            font-size: 14px; 
             line-height: 1.45;
             color: #444;
             margin-bottom: 20px;
@@ -172,10 +174,25 @@
         .article-body p { margin-bottom: 1.2em; }
         .article-body em { font-style: italic; color: #555; }
 
+        /* KLEINE QUADRATISCHE BILDER IM TEXT (240px) */
+        .inline-thumb {
+            width: 240px;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 2px;
+            margin: 10px 25px 20px 0;
+            float: left;
+            clear: both;
+        }
+        
+        .inline-thumb.right {
+            float: right;
+            margin: 10px 0 20px 25px;
+        }
+
         /* Toggle Mechanism */
         .text-toggle input { display: none; }
         
-        /* BUTTON: Eingerahmt */
         .toggle-label {
             font-family: var(--font-sans);
             font-size: 12px;
@@ -257,243 +274,303 @@
     <!-- ARTICLES LIST -->
     <section class="articles-section">
 
-        <!-- ARTIKEL 01: Das Molekül -->
+        <!-- ARTIKEL 01 -->
         <article class="article-block">
-            <div class="article-image-container">
-                <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=1200&auto=format&fit=crop" alt="Wissenschaft Labor">
-            </div>
-            <div class="article-content">
-                <span class="article-eyebrow">Wissenschaft</span>
-                <h2 class="article-title">Das Molekül: Die Substanz, die Ihre Haut bereits kennt</h2>
-                <div class="article-body">
-                    <p>Es gibt Wirkstoffe, die von außen in den Körper eingebracht werden, um etwas zu tun, was der Körper von sich aus nicht kann. Und dann gibt es Wirkstoffe, die der Körper selbst produziert — Substanzen, die Teil seiner eigenen Sprache sind, die er versteht, auf die er antwortet, weil er sie erkennt. GHK-Cu gehört zur zweiten Kategorie.</p>
+            <div class="article-wrapper">
+                <div class="article-image-container">
+                    <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=1200&auto=format&fit=crop" alt="Wissenschaft Labor">
                 </div>
-
-                <div class="text-toggle">
-                    <input type="checkbox" id="toggle-01">
-                    <label for="toggle-01" class="toggle-label">Mehr erfahren</label>
-                    
-                    <div class="toggle-content">
-                        <div class="article-body">
-                            <p>GHK-Cu ist die Kurzform für Glycyl-L-Histidyl-L-Lysin-Kupfer. Ein Tripeptid, also eine Verbindung aus drei Aminosäuren, die an ein Kupferion gebunden ist. Das klingt nach Labor. In Wirklichkeit ist es Biologie — diese Verbindung zirkuliert natürlicherweise im menschlichen Blutplasma, in der Gewebsflüssigkeit, in der Haut selbst. Sie ist kein Fremdstoff. Sie ist Teil des körpereigenen Kommunikationssystems.</p>
-                            <p>Was GHK-Cu kommuniziert, ist im Wesentlichen ein Signal: <em>Reparatur.</em> Wenn Gewebe beschädigt wird — durch UV-Strahlung, mechanischen Stress, Entzündung oder einfach den normalen Zellverschleiß des Alters — steigt die lokale Konzentration von GHK-Cu. Die Substanz fungiert als Botenstoff, der Fibroblasten aktiviert, die Produktion von Kollagen und Elastin anregt und gleichzeitig die Enzyme reguliert, die Kollagen abbauen. Es ist kein blinder Aufbaubefehl, sondern ein intelligentes Gleichgewicht.</p>
-                            <p>Der Entdecker dieses Mechanismus ist Loren Pickart, ein amerikanischer Biochemiker, der GHK-Cu in den frühen 1970er Jahren erstmals aus humanem Serumalbumin isolierte. Pickart beobachtete, dass alte Leberzellen in einem Medium aus jungem Plasma signifikant besser funktionierten als in einem Medium aus altem Plasma — und machte sich daran, herauszufinden, welche Substanz dafür verantwortlich war. Die Antwort war GHK-Cu. Seitdem sind mehr als fünf Jahrzehnte Forschung hinzugekommen: über 600 publizierte Studien, Nachweise der Wirksamkeit bei Wundheilung, Hautalterung, anti-inflammatorischen Prozessen, Haarwachstum und sogar neurologischer Regeneration.</p>
-                            <p>Was macht das alles für die tägliche Hautpflege relevant? Die Konzentration von GHK-Cu im Körper ist altersabhängig. Mit 20 Jahren liegt die Plasmakonzentration bei etwa 200 Nanogramm pro Milliliter. Mit 60 Jahren ist sie auf unter 80 Nanogramm gesunken — eine Reduktion um mehr als 60 Prozent. Parallel dazu nimmt die Fähigkeit der Haut ab, sich zu regenerieren: Kollagenproduktion sinkt, Wundheilung verlangsamt sich, die Barrierefunktion verschlechtert sich.</p>
-                            <p>Das ist kein Zufall. Es ist ein direkter Zusammenhang. Die Haut altert nicht, weil sie aufgehört hat zu reparieren. Sie altert, weil das Signal, das Reparatur auslöst, immer schwächer wird.</p>
-                            <p>Die Logik von BIOCUPRA ist deshalb schlicht: Man gibt der Haut das Signal zurück. Nicht synthetisch nachgeahmt, nicht durch einen Umweg über den Metabolismus — sondern direkt, topisch, in klinisch relevanter Konzentration. Das Kupfertripeptid wird auf die gereinigte Haut aufgetragen, penetriert in tiefere Schichten und tritt dort mit den Fibroblasten in Kontakt. Der Körper erkennt das Molekül. Er antwortet.</p>
-                            <p><em>Das ist der Unterschied zwischen einem Wirkstoff, der etwas verspricht, und einem Wirkstoff, den der Körper versteht.</em></p>
-                        </div>
+                <div class="article-content">
+                    <span class="article-eyebrow">Wissenschaft</span>
+                    <h2 class="article-title">Das Molekül: Die Substanz, die Ihre Haut bereits kennt</h2>
+                    <div class="article-body">
+                        <p>Es gibt Wirkstoffe, die von außen in den Körper eingebracht werden, um etwas zu tun, was der Körper von sich aus nicht kann. Und dann gibt es Wirkstoffe, die der Körper selbst produziert — Substanzen, die Teil seiner eigenen Sprache sind, die er versteht, auf die er antwortet, weil er sie erkennt. GHK-Cu gehört zur zweiten Kategorie.</p>
                     </div>
-                    <label for="toggle-01" class="close-label">Weniger anzeigen</label>
+
+                    <div class="text-toggle">
+                        <input type="checkbox" id="toggle-01">
+                        <label for="toggle-01" class="toggle-label">Mehr erfahren</label>
+                        
+                        <div class="toggle-content">
+                            <div class="article-body">
+                                <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=500&auto=format&fit=crop" alt="Molekül Detail" class="inline-thumb">
+                                <p>GHK-Cu ist die Kurzform für Glycyl-L-Histidyl-L-Lysin-Kupfer. Ein Tripeptid, also eine Verbindung aus drei Aminosäuren, die an ein Kupferion gebunden ist. Das klingt nach Labor. In Wirklichkeit ist es Biologie — diese Verbindung zirkuliert natürlicherweise im menschlichen Blutplasma, in der Gewebsflüssigkeit, in der Haut selbst. Sie ist kein Fremdstoff. Sie ist Teil des körpereigenen Kommunikationssystems.</p>
+                                
+                                <p>Was GHK-Cu kommuniziert, ist im Wesentlichen ein Signal: <em>Reparatur.</em> Wenn Gewebe beschädigt wird — durch UV-Strahlung, mechanischen Stress, Entzündung oder einfach den normalen Zellverschleiß des Alters — steigt die lokale Konzentration von GHK-Cu. Die Substanz fungiert als Botenstoff, der Fibroblasten aktiviert, die Produktion von Kollagen und Elastin anregt und gleichzeitig die Enzyme reguliert, die Kollagen abbauen. Es ist kein blinder Aufbaubefehl, sondern ein intelligentes Gleichgewicht.</p>
+                                
+                                <p>Der Entdecker dieses Mechanismus ist Loren Pickart, ein amerikanischer Biochemiker, der GHK-Cu in den frühen 1970er Jahren erstmals aus humanem Serumalbumin isolierte. Pickart beobachtete, dass alte Leberzellen in einem Medium aus jungem Plasma signifikant besser funktionierten als in einem Medium aus altem Plasma — und machte sich daran, herauszufinden, welche Substanz dafür verantwortlich war. Die Antwort war GHK-Cu. Seitdem sind mehr als fünf Jahrzehnte Forschung hinzugekommen: über 600 publizierte Studien, Nachweise der Wirksamkeit bei Wundheilung, Hautalterung, anti-inflammatorischen Prozessen, Haarwachstum und sogar neurologischer Regeneration.</p>
+                                
+                                <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=500&auto=format&fit=crop" alt="Labor Studie" class="inline-thumb right">
+                                <p>Was macht das alles für die tägliche Hautpflege relevant? Die Konzentration von GHK-Cu im Körper ist altersabhängig. Mit 20 Jahren liegt die Plasmakonzentration bei etwa 200 Nanogramm pro Milliliter. Mit 60 Jahren ist sie auf unter 80 Nanogramm gesunken — eine Reduktion um mehr als 60 Prozent. Parallel dazu nimmt die Fähigkeit der Haut ab, sich zu regenerieren: Kollagenproduktion sinkt, Wundheilung verlangsamt sich, die Barrierefunktion verschlechtert sich.</p>
+                                
+                                <p>Das ist kein Zufall. Es ist ein direkter Zusammenhang. Die Haut altert nicht, weil sie aufgehört hat zu reparieren. Sie altert, weil das Signal, das Reparatur auslöst, immer schwächer wird.</p>
+                                <p>Die Logik von BIOCUPRA ist deshalb schlicht: Man gibt der Haut das Signal zurück. Nicht synthetisch nachgeahmt, nicht durch einen Umweg über den Metabolismus — sondern direkt, topisch, in klinisch relevanter Konzentration. Das Kupfertripeptid wird auf die gereinigte Haut aufgetragen, penetriert in tiefere Schichten und tritt dort mit den Fibroblasten in Kontakt. Der Körper erkennt das Molekül. Er antwortet.</p>
+                                <p><em>Das ist der Unterschied zwischen einem Wirkstoff, der etwas verspricht, und einem Wirkstoff, den der Körper versteht.</em></p>
+                            </div>
+                        </div>
+                        <label for="toggle-01" class="close-label">Weniger anzeigen</label>
+                    </div>
                 </div>
             </div>
         </article>
 
-        <!-- ARTIKEL 02: Regeneration -->
+        <!-- ARTIKEL 02 -->
         <article class="article-block">
-            <div class="article-image-container">
-                <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=1200&auto=format&fit=crop" alt="Hautregeneration">
-            </div>
-            <div class="article-content">
-                <span class="article-eyebrow">Nachsorge</span>
-                <h2 class="article-title">Nach dem Laser: Warum die Nachsorge über alles entscheidet</h2>
-                <div class="article-body">
-                    <p>Laser-Resurfacing gehört zu den wirksamsten Verfahren, die die ästhetische Medizin heute anbietet. Fraktionierter CO₂-Laser, Erbium-Laser, nicht-ablativer Nd:YAG — die Geräte und ihre Protokolle unterscheiden sich, aber das Prinzip ist dasselbe: kontrollierte Verletzung. Man schädigt die Haut gezielt und präzise, um den Körper zur Reparatur zu zwingen. Die neue Haut, die entsteht, ist strukturell besser, gleichmäßiger, fester. Das ist der Plan.</p>
+            <div class="article-wrapper">
+                <div class="article-image-container">
+                    <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=1200&auto=format&fit=crop" alt="Hautregeneration">
                 </div>
-
-                <div class="text-toggle">
-                    <input type="checkbox" id="toggle-02">
-                    <label for="toggle-02" class="toggle-label">Mehr erfahren</label>
-                    
-                    <div class="toggle-content">
-                        <div class="article-body">
-                            <p>Was dieser Plan ausblendet, ist das, was zwischen Eingriff und Ergebnis liegt. Die Phase der Regeneration ist nicht passiv — sie ist aktiv, komplex und störbar. Was in den ersten 48 bis 72 Stunden nach einem Lasereingriff passiert, hat direkten Einfluss auf die Qualität des Endergebnisses.</p>
-                            <p>Unmittelbar nach dem Eingriff befindet sich die Haut in einem Ausnahmezustand. Die Barriere ist kompromittiert oder vollständig entfernt. Die Epidermis schützt nicht mehr. Entzündungsmediatoren fluten das Gewebe. Fibroblasten in der Dermis erhalten das Signal zur Aktivierung und beginnen, Kollagen zu synthetisieren — das ist der gewünschte Prozess. Gleichzeitig sind freie Radikale aktiv, Entzündungsreaktionen laufen parallel, und der Hautzustand schwankt zwischen Heilung und Überlastung.</p>
-                            <p>Die meisten Nachsorgeprogramme in der ästhetischen Medizin sind auf Schutz ausgelegt: feuchtigkeitsspendende Auflagen, okklusive Verbände, Panthenol, beruhigende Cremes. Das ist sinnvoll und notwendig. Aber es ist reaktiv. Es hält die Haut feucht und schützt sie vor Infektionen — es stimuliert jedoch nicht aktiv den Reparaturprozess.</p>
-                            <p>GHK-Cu fügt dieser Nachsorge eine entscheidende Dimension hinzu. Das Tripeptid interagiert direkt mit Fibroblasten — jenen Zellen in der Dermis, die Kollagen, Elastin und Hyaluronsäure produzieren. Es beschleunigt ihre Aktivierung, steigert die Syntheserate und reguliert gleichzeitig die Matrix-Metalloproteinasen — Enzyme, die beschädigtes Kollagen abbauen. Das Ergebnis ist eine geordnetere, effizientere Heilung: weniger Residualentzündung, schnellerer Epithelschluss, bessere Kollagenarchitektur im Endergebnis.</p>
-                            <p>Eine multizentrische Studie aus dem Jahr 2024 dokumentierte bei Patienten, die nach fraktioniertem Laserresurfacing GHK-Cu topisch angewendet hatten, eine um 25 Prozent schnellere epitheliale Regeneration im Vergleich zur Kontrollgruppe. Die entzündlichen Marker — gemessen über Interleukin-6 und TNF-alpha — lagen in der GHK-Cu-Gruppe um 30 Prozent niedriger. In der klinischen Praxis bedeutet das kürzere Ausfallzeiten, weniger Rötung in den Wochen nach dem Eingriff und eine höhere Wahrscheinlichkeit, dass das angestrebte Ergebnis tatsächlich erreicht wird.</p>
-                            <p>Für Patientinnen und Patienten, die in ein Laserverfahren investieren, ist die Nachsorge kein Anhang. Sie ist Teil des Ergebnisses. Ein Eingriff, der mit optimaler Regenerationsunterstützung begleitet wird, liefert mehr — von derselben Prozedur, ohne zusätzliches Risiko.</p>
-                            <p>Das BIOCUPRA Serum kann ab dem zweiten Tag nach dem Eingriff angewendet werden, sobald die akute Vulnerabilitätsphase abgeschlossen ist. Das airless System schützt dabei die Sterilität des Produkts — bei einer kompromittierten Hautbarriere ist Kontaminationsschutz keine Kleinigkeit.</p>
-                        </div>
+                <div class="article-content">
+                    <span class="article-eyebrow">Nachsorge</span>
+                    <h2 class="article-title">Nach dem Laser: Warum die Nachsorge über alles entscheidet</h2>
+                    <div class="article-body">
+                        <p>Laser-Resurfacing gehört zu den wirksamsten Verfahren, die die ästhetische Medizin heute anbietet. Fraktionierter CO₂-Laser, Erbium-Laser, nicht-ablativer Nd:YAG — die Geräte und ihre Protokolle unterscheiden sich, aber das Prinzip ist dasselbe: kontrollierte Verletzung. Man schädigt die Haut gezielt und präzise, um den Körper zur Reparatur zu zwingen. Die neue Haut, die entsteht, ist strukturell besser, gleichmäßiger, fester. Das ist der Plan.</p>
                     </div>
-                    <label for="toggle-02" class="close-label">Weniger anzeigen</label>
+
+                    <div class="text-toggle">
+                        <input type="checkbox" id="toggle-02">
+                        <label for="toggle-02" class="toggle-label">Mehr erfahren</label>
+                        
+                        <div class="toggle-content">
+                            <div class="article-body">
+                                <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=500&auto=format&fit=crop" alt="Hautstruktur" class="inline-thumb">
+                                <p>Was dieser Plan ausblendet, ist das, was zwischen Eingriff und Ergebnis liegt. Die Phase der Regeneration ist nicht passiv — sie ist aktiv, komplex und störbar. Was in den ersten 48 bis 72 Stunden nach einem Lasereingriff passiert, hat direkten Einfluss auf die Qualität des Endergebnisses.</p>
+                                
+                                <p>Unmittelbar nach dem Eingriff befindet sich die Haut in einem Ausnahmezustand. Die Barriere ist kompromittiert oder vollständig entfernt. Die Epidermis schützt nicht mehr. Entzündungsmediatoren fluten das Gewebe. Fibroblasten in der Dermis erhalten das Signal zur Aktivierung und beginnen, Kollagen zu synthetisieren — das ist der gewünschte Prozess. Gleichzeitig sind freie Radikale aktiv, Entzündungsreaktionen laufen parallel, und der Hautzustand schwankt zwischen Heilung und Überlastung.</p>
+                                
+                                <p>Die meisten Nachsorgeprogramme in der ästhetischen Medizin sind auf Schutz ausgelegt: feuchtigkeitsspendende Auflagen, okklusive Verbände, Panthenol, beruhigende Cremes. Das ist sinnvoll und notwendig. Aber es ist reaktiv. Es hält die Haut feucht und schützt sie vor Infektionen — es stimuliert jedoch nicht aktiv den Reparaturprozess.</p>
+                                
+                                <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=500&auto=format&fit=crop" alt="Routine" class="inline-thumb right">
+                                <p>GHK-Cu fügt dieser Nachsorge eine entscheidende Dimension hinzu. Das Tripeptid interagiert direkt mit Fibroblasten — jenen Zellen in der Dermis, die Kollagen, Elastin und Hyaluronsäure produzieren. Es beschleunigt ihre Aktivierung, steigert die Syntheserate und reguliert gleichzeitig die Matrix-Metalloproteinasen — Enzyme, die beschädigtes Kollagen abbauen. Das Ergebnis ist eine geordnetere, effizientere Heilung: weniger Residualentzündung, schnellerer Epithelschluss, bessere Kollagenarchitektur im Endergebnis.</p>
+                                
+                                <p>Eine multizentrische Studie aus dem Jahr 2024 dokumentierte bei Patienten, die nach fraktioniertem Laserresurfacing GHK-Cu topisch angewendet hatten, eine um 25 Prozent schnellere epitheliale Regeneration im Vergleich zur Kontrollgruppe. Die entzündlichen Marker — gemessen über Interleukin-6 und TNF-alpha — lagen in der GHK-Cu-Gruppe um 30 Prozent niedriger. In der klinischen Praxis bedeutet das kürzere Ausfallzeiten, weniger Rötung in den Wochen nach dem Eingriff und eine höhere Wahrscheinlichkeit, dass das angestrebte Ergebnis tatsächlich erreicht wird.</p>
+                                <p>Für Patientinnen und Patienten, die in ein Laserverfahren investieren, ist die Nachsorge kein Anhang. Sie ist Teil des Ergebnisses. Ein Eingriff, der mit optimaler Regenerationsunterstützung begleitet wird, liefert mehr — von derselben Prozedur, ohne zusätzliches Risiko.</p>
+                                <p>Das BIOCUPRA Serum kann ab dem zweiten Tag nach dem Eingriff angewendet werden, sobald die akute Vulnerabilitätsphase abgeschlossen ist. Das airless System schützt dabei die Sterilität des Produkts — bei einer kompromittierten Hautbarriere ist Kontaminationsschutz keine Kleinigkeit.</p>
+                            </div>
+                        </div>
+                        <label for="toggle-02" class="close-label">Weniger anzeigen</label>
+                    </div>
                 </div>
             </div>
         </article>
 
-        <!-- ARTIKEL 03: Wissenschaft -->
+        <!-- ARTIKEL 03 -->
         <article class="article-block">
-            <div class="article-image-container">
-                <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=1200&auto=format&fit=crop" alt="Kollagen Struktur">
-            </div>
-            <div class="article-content">
-                <span class="article-eyebrow">Wirkstoffe</span>
-                <h2 class="article-title">Kollagen trinken, Kollagen bauen, Kollagen signalisieren</h2>
-                <div class="article-body">
-                    <p>Der Kollagen-Markt ist einer der am schnellsten wachsenden Segmente in der Wellness-Industrie. Kollagenpulver im Kaffee, Kollagen-Shots auf nüchternen Magen, Kollagenkapseln zur Nacht — die Versprechen sind überall, und sie klingen einleuchtend. Der Körper braucht Kollagen. Die Haut verliert Kollagen. Also nehme man Kollagen zu sich.</p>
+            <div class="article-wrapper">
+                <div class="article-image-container">
+                    <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=1200&auto=format&fit=crop" alt="Kollagen Struktur">
                 </div>
+                <div class="article-content">
+                    <span class="article-eyebrow">Wirkstoffe</span>
+                    <h2 class="article-title">Kollagen trinken, Kollagen bauen, Kollagen signalisieren</h2>
+                    <div class="article-body">
+                        <p>Der Kollagen-Markt ist einer der am schnellsten wachsenden Segmente in der Wellness-Industrie. Kollagenpulver im Kaffee, Kollagen-Shots auf nüchternen Magen, Kollagenkapseln zur Nacht — die Versprechen sind überall, und sie klingen einleuchtend. Der Körper braucht Kollagen. Die Haut verliert Kollagen. Also nehme man Kollagen zu sich.</p>
+                    </div>
 
-                <div class="text-toggle">
-                    <input type="checkbox" id="toggle-03">
-                    <label for="toggle-03" class="toggle-label">Mehr erfahren</label>
-                    
-                    <div class="toggle-content">
-                        <div class="article-body">
-                            <p>Die Logik hat einen Fehler.</p>
-                            <p>Kollagen ist ein großes Strukturprotein — zu groß, um als Ganzes vom Verdauungstrakt aufgenommen zu werden. Was den Mund verlässt, kommt nicht als Kollagen im Blut an. Im Magen und Dünndarm werden Kollagenpeptide durch Enzyme in ihre Bestandteile zerlegt: einzelne Aminosäuren, Dipeptide, Tripeptide. Diese gelangen ins Blut. Ob und in welcher Konzentration sie dann spezifisch in die Dermis transportiert werden und dort zur Kollagensynthese beitragen, ist wissenschaftlich noch nicht abschließend belegt. Es gibt Studien, die positive Effekte bei oraler Kollagensupplementation zeigen — und Studien, die keine signifikanten Unterschiede finden. Die Mechanismen sind plausibel, der Wirknachweis ist nicht konsistent.</p>
-                            <p>Das ist keine Aussage gegen Kollagensupplements. Es ist eine Einordnung.</p>
-                            <p>GHK-Cu arbeitet auf einem grundlegend anderen Weg. Es ist kein Baustoff, sondern ein Signal. Ein Botenstoff, der dem Fibroblast mitteilt: Produziere Kollagen. Und der Fibroblast antwortet — mit körpereigenem Kollagen, das er selbst synthetisiert, in der Struktur, der Vernetzung und am Ort, die dem natürlichen Gewebe entsprechen.</p>
-                            <p>Das ist der Unterschied zwischen Exogen und Endogen. Exogenes Kollagen muss den Weg durch Verdauung und Blutkreislauf nehmen und hoffen, am richtigen Ort anzukommen. Endogenes Kollagen — das, das der Fibroblast auf Signal hin selbst produziert — entsteht direkt in der Dermis, aus lokalen Ressourcen, integriert in die bestehende Matrix.</p>
-                            <p>GHK-Cu aktiviert dabei nicht nur die Synthese von Kollagen Typ I und III (die für Festigkeit und Elastizität relevantesten Typen), sondern stimuliert auch die Produktion von Fibronektin und Laminin — Strukturproteine der Extrazellulärmatrix, die für die Gesamtarchitektur der Dermis mitverantwortlich sind. Gleichzeitig hemmt es die Überaktivität von Matrix-Metalloproteinasen, jenen Enzymen, die Kollagen im Rahmen normaler Umbauprozesse abbauen. Im Alter sind diese Enzyme chronisch überaktiv — GHK-Cu dämpft ihre Aktivität und verschiebt das Gleichgewicht in Richtung Aufbau.</p>
-                            <p>Wer Kollagen als Supplement nimmt und zusätzlich topisches GHK-Cu anwendet, schließt keine Lücke doppelt — er arbeitet auf zwei verschiedenen Wegen gleichzeitig. Beides schließt sich nicht aus. Aber wer nur eines tun kann oder will, sollte verstehen, dass der direktere Mechanismus der topische ist.</p>
+                    <div class="text-toggle">
+                        <input type="checkbox" id="toggle-03">
+                        <label for="toggle-03" class="toggle-label">Mehr erfahren</label>
+                        
+                        <div class="toggle-content">
+                            <div class="article-body">
+                                <p>Die Logik hat einen Fehler.</p>
+                                <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=500&auto=format&fit=crop" alt="Kollagen Drinke" class="inline-thumb">
+                                <p>Kollagen ist ein großes Strukturprotein — zu groß, um als Ganzes vom Verdauungstrakt aufgenommen zu werden. Was den Mund verlässt, kommt nicht als Kollagen im Blut an. Im Magen und Dünndarm werden Kollagenpeptide durch Enzyme in ihre Bestandteile zerlegt: einzelne Aminosäuren, Dipeptide, Tripeptide. Diese gelangen ins Blut. Ob und in welcher Konzentration sie dann spezifisch in die Dermis transportiert werden und dort zur Kollagensynthese beitragen, ist wissenschaftlich noch nicht abschließend belegt. Es gibt Studien, die positive Effekte bei oraler Kollagensupplementation zeigen — und Studien, die keine signifikanten Unterschiede finden. Die Mechanismen sind plausibel, der Wirknachweis ist nicht konsistent.</p>
+                                
+                                <p>Das ist keine Aussage gegen Kollagensupplements. Es ist eine Einordnung.</p>
+                                
+                                <p>GHK-Cu arbeitet auf einem grundlegend anderen Weg. Es ist kein Baustoff, sondern ein Signal. Ein Botenstoff, der dem Fibroblast mitteilt: Produziere Kollagen. Und der Fibroblast antwortet — mit körpereigenem Kollagen, das er selbst synthetisiert, in der Struktur, der Vernetzung und am Ort, die dem natürlichen Gewebe entsprechen.</p>
+                                
+                                <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=500&auto=format&fit=crop" alt="Zellstruktur" class="inline-thumb right">
+                                <p>Das ist der Unterschied zwischen Exogen und Endogen. Exogenes Kollagen muss den Weg durch Verdauung und Blutkreislauf nehmen und hoffen, am richtigen Ort anzukommen. Endogenes Kollagen — das, das der Fibroblast auf Signal hin selbst produziert — entsteht direkt in der Dermis, aus lokalen Ressourcen, integriert in die bestehende Matrix.</p>
+                                
+                                <p>GHK-Cu aktiviert dabei nicht nur die Synthese von Kollagen Typ I und III (die für Festigkeit und Elastizität relevantesten Typen), sondern stimuliert auch die Produktion von Fibronektin und Laminin — Strukturproteine der Extrazellulärmatrix, die für die Gesamtarchitektur der Dermis mitverantwortlich sind. Gleichzeitig hemmt es die Überaktivität von Matrix-Metalloproteinasen, jenen Enzymen, die Kollagen im Rahmen normaler Umbauprozesse abbauen. Im Alter sind diese Enzyme chronisch überaktiv — GHK-Cu dämpft ihre Aktivität und verschiebt das Gleichgewicht in Richtung Aufbau.</p>
+                                <p>Wer Kollagen als Supplement nimmt und zusätzlich topisches GHK-Cu anwendet, schließt keine Lücke doppelt — er arbeitet auf zwei verschiedenen Wegen gleichzeitig. Beides schließt sich nicht aus. Aber wer nur eines tun kann oder will, sollte verstehen, dass der direktere Mechanismus der topische ist.</p>
+                            </div>
                         </div>
+                        <label for="toggle-03" class="close-label">Weniger anzeigen</label>
                     </div>
-                    <label for="toggle-03" class="close-label">Weniger anzeigen</label>
-                </div>
-            </div>
-        </article>
-        
-        <!-- ARTIKEL 04: Vergleich -->
-        <article class="article-block">
-            <div class="article-image-container">
-                <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=1200&auto=format&fit=crop" alt="Produkt Vergleich">
-            </div>
-            <div class="article-content">
-                <span class="article-eyebrow">Vergleich</span>
-                <h2 class="article-title">GHK-Cu und Retinol: Eine Frage des Weges, nicht des Ziels</h2>
-                <div class="article-body">
-                    <p>Retinol ist in der Anti-Aging-Dermatologie seit Jahrzehnten etabliert. Die Datenlage ist robust, die Wirksamkeit ist belegt, und Dermatologen weltweit empfehlen es als Erstlinientherapie bei lichtbedingter Hautalterung. Es gibt wenige Wirkstoffe in der Kosmetik, die eine vergleichbare wissenschaftliche Grundlage haben.</p>
-                </div>
-                <div class="text-toggle">
-                    <input type="checkbox" id="toggle-04">
-                    <label for="toggle-04" class="toggle-label">Mehr erfahren</label>
-                    <div class="toggle-content">
-                        <div class="article-body">
-                             <p>Trotzdem ist Retinol nicht für jeden die richtige Wahl.</p>
-                             <p>Retinol wirkt über Vitamin-A-Rezeptoren in den Keratinozyten und Fibroblasten. Es beschleunigt die Zellteilung in der Epidermis, erhöht die Kollagensynthese und normalisiert die verhornte Zellschicht. Das sind drei echte, messbare Effekte. Aber der Preis dieser Wirkung ist bekannt: Rötung, Schuppung, Trockenheit — besonders in den ersten Wochen der Anwendung. Die Haut muss sich an Retinol gewöhnen. Bei empfindlicher Haut, Rosacea oder Barrierestörungen kann dieser Eingewöhnungsprozess Wochen dauern und mit erheblichem Komfortverlust verbunden sein. Dazu kommt die erhöhte Photosensibilität: Retinol destabilisiert die Hornschicht vorübergehend, was konsequenten UV-Schutz zwingend macht.</p>
-                             <p>GHK-Cu erreicht ähnliche Ziele — mehr Kollagen, bessere Hautfestigkeit, verlangsamte Alterung — über einen völlig anderen Weg. Nicht durch Stimulation der Zellproliferation, sondern durch direkte Aktivierung der Fibroblasten. Nicht durch Destabilisierung, sondern durch Stärkung. GHK-Cu hat kein bekanntes Reizpotenzial. Es ist selbst anti-inflammatorisch — es beruhigt aktiv entzündete Haut, anstatt sie zu belasten. Die Barriere wird gestärkt, nicht vorübergehend geschwächt. Photosensibilität entsteht nicht.</p>
-                             <p>Für Menschen mit sensibler Haut, Rosacea, aktiven Entzündungen oder einfach einem Lebensstil, der keinen Platz für Eingewöhnungsphasen lässt, ist GHK-Cu keine Kompromisslösung. Es ist die wirksamere Option.</p>
-                             <p>Für Menschen, die Retinol gut vertragen und gute Ergebnisse damit erzielen, ist die Frage eine andere: Lässt sich GHK-Cu ergänzen? Die Antwort ist ja — aber mit einem wichtigen Vorbehalt. Beide Wirkstoffe sollten nicht in derselben Anwendung kombiniert werden. GHK-Cu ist stabil in einem pH-Bereich von 6 bis 7. Retinol ist am wirksamsten in neutralen bis leicht sauren Formulierungen, aber in Kombination mit anderen Wirkstoffen können Stabilitätsprobleme auftreten. Die einfachere und sicherere Strategie: GHK-Cu morgens, Retinol abends. Zwei Wirkstoffe, zwei Zeitfenster, kein gegenseitiger Einfluss.</p>
-                             <p><em>Das ist kein Kompromiss. Es ist ein optimiertes Protokoll.</em></p>
-                        </div>
-                    </div>
-                    <label for="toggle-04" class="close-label">Weniger anzeigen</label>
-                </div>
-            </div>
-        </article>
-
-        <!-- ARTIKEL 05: Lifestyle / Anti-Aging -->
-        <article class="article-block">
-            <div class="article-image-container">
-                <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=1200&auto=format&fit=crop" alt="Anti Aging">
-            </div>
-            <div class="article-content">
-                <span class="article-eyebrow">Anti-Aging</span>
-                <h2 class="article-title">Das stille Altern der Haut — und warum wir es falsch lesen</h2>
-                <div class="article-body">
-                    <p>Wir haben eine sehr klare Vorstellung davon, wie Hautalterung aussieht: Falten, Pigmentflecken, Erschlaffung. Das sind die sichtbaren Symptome. Aber sie sind nicht der Anfang. Sie sind das Ende eines Prozesses, der lange vorher begonnen hat — leise, unsichtbar, tief in der Dermis.</p>
-                </div>
-                <div class="text-toggle">
-                    <input type="checkbox" id="toggle-05">
-                    <label for="toggle-05" class="toggle-label">Mehr erfahren</label>
-                    <div class="toggle-content">
-                        <div class="article-body">
-                            <p>Hautalterung ist in Wirklichkeit eine Geschichte sinkender Konzentrationen. Kollagen Typ I und III, die tragenden Strukturproteine der Dermis, werden ab dem 25. Lebensjahr jährlich um etwa ein Prozent weniger produziert. GHK-Cu, der endogene Regenerationsbotstoffe, sinkt parallel dazu ab. Elastin, verantwortlich für die Rückstellfähigkeit der Haut, verliert seine Funktion durch langjährige UV-Exposition und die sinkende Aktivität der produzierenden Fibroblasten. Die Basalmembran zwischen Epidermis und Dermis, die für die Versorgung der Oberhaut mit Nährstoffen entscheidend ist, verflacht.</p>
-                            <p>All das passiert, bevor eine einzige Falte sichtbar ist.</p>
-                            <p>Das hat Konsequenzen für den Zeitpunkt, an dem man beginnen sollte, ernsthaft über Hautpflege nachzudenken. Die meisten Menschen beginnen, wenn das sichtbare Altern beginnt. Aber dann ist man bereits im Rückstand. Die Kapazitäten sind schon reduziert, die Strukturen bereits geschwächt. Prävention ist wirksamer als Korrektur — nicht als Marketingaussage, sondern als biologische Tatsache.</p>
-                            <p>GHK-Cu ist in diesem Kontext besonders interessant, weil es nicht nur repariert, sondern auch erhält. Bei jüngerer Haut, die noch über funktionsfähige Fibroblasten und intakte Barriere verfügt, unterstützt GHK-Cu die endogene Regenerationskapazität, bevor sie nachlässt. Es ist kein Wirkstoff für eine spezifische Altersgruppe. Es ist ein Wirkstoff für jeden, der versteht, dass Prävention keine Lebensversicherung ist, die man erst mit 50 abschließt.</p>
-                            <p>Der zweite häufige Denkfehler: Man behandelt Symptome statt Ursachen. Hyaluronsäure-Filler polstern auf. Botulinumtoxin entspannt. Oberflächliche Peelings verbessern die Textur. All das hat seinen Platz — aber keines dieser Verfahren adressiert den Rückgang der Fibroblastenfunktion, der dem sichtbaren Altern zugrunde liegt. GHK-Cu tut das. Es greift am Ursprung an.</p>
-                            <p>Es gibt keine Anti-Aging-Routine, die alles löst. Aber es gibt Prioritäten. Sonnenschutz täglich ist die effektivste Einzelmaßnahme gegen Photoalterung. GHK-Cu topisch ist die direkteste Maßnahme gegen die strukturelle Alterung der Dermis. Alles andere — Peelings, Retinol, Feuchtigkeit — ist Ergänzung.</p>
-                        </div>
-                    </div>
-                    <label for="toggle-05" class="close-label">Weniger anzeigen</label>
                 </div>
             </div>
         </article>
         
-        <!-- ARTIKEL 06: Trend & Lifestyle -->
+        <!-- ARTIKEL 04 -->
         <article class="article-block">
-            <div class="article-image-container">
-                <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=1200&auto=format&fit=crop" alt="Biohacking">
-            </div>
-            <div class="article-content">
-                <span class="article-eyebrow">Biohacking</span>
-                <h2 class="article-title">Biohacking trifft Schönheit: Warum die neue Generation Hautpflege anders denkt</h2>
-                <div class="article-body">
-                    <p>Der Begriff Biohacking klingt nach Silicon Valley, nach Kältekammern um 5 Uhr morgens, nach Trackern, die jeden Herzschlag protokollieren. Das ist ein Teil davon. Aber Biohacking ist im Kern eine Haltung: die Bereitschaft, den eigenen Körper zu verstehen, in ihn zu investieren und auf Basis von Daten statt Versprechen zu entscheiden.</p>
+            <div class="article-wrapper">
+                <div class="article-image-container">
+                    <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=1200&auto=format&fit=crop" alt="Vergleich">
                 </div>
-                <div class="text-toggle">
-                    <input type="checkbox" id="toggle-06">
-                    <label for="toggle-06" class="toggle-label">Mehr erfahren</label>
-                    <div class="toggle-content">
-                        <div class="article-body">
-                            <p>Diese Haltung hat die Hautpflege erreicht — und sie verändert den Markt grundlegend.</p>
-                            <p>Die neue Generation von Beauty-Konsumenten liest Inhaltsstofflisten. Sie googelt Wirkstoffkonzentrationen. Sie fragt, warum ein Produkt funktioniert, nicht nur ob es das tut. Sie ist skeptisch gegenüber Verpackungsversprechen und misstraut Influencer-Reviews ohne Substanz. Diese Käuferinnen und Käufer nennt die Branche „Skintellectuals" — und ihr Anteil wächst schnell.</p>
-                            <p>Für diese Gruppe sind die Spielregeln des Beauty-Marketings weitgehend wirkungslos. Luxusverpackung macht keinen Eindruck, wenn das Datenblatt fehlt. Celebrity-Endorsements überzeugen nicht, wenn kein Peer-Review dahintersteht. Was überzeugt, ist Transparenz — genaue Konzentrationsangaben, ehrliche Kommunikation über Mechanismen, Bereitschaft, Produkte an wissenschaftlichen Maßstäben messen zu lassen.</p>
-                            <p>GHK-Cu ist der Wirkstoff, der in dieser Gruppe vielleicht mehr Aufmerksamkeit genießt als jeder andere. Nicht wegen Marketing, sondern trotz des Fehlens davon. Die Substanz ist seit Jahrzehnten in der Forschungsliteratur präsent, wird in medizinischen Post-Procedure-Protokollen eingesetzt und hat einen eindeutigen Wirknachweis — all das, ohne je Gegenstand einer großen Beauty-Kampagne gewesen zu sein. Für Biohacker ist das ein Qualitätsmerkmal. Wenn eine Substanz bekannt ist, weil Wissenschaftler über sie schreiben und nicht weil Marken über sie schreiben, ist das ein Signal.</p>
-                            <p>BIOCUPRA ist für diese Zielgruppe gebaut. Die Konzentrations-Transparenz, die airless Technologie, die klare Positionierung auf einem einzigen Wirkstoff — das sind keine Designentscheidungen. Es sind inhaltliche Positionen. Wir folgen keinen Trends. Wir folgen der Wissenschaft. Das ist ein Versprechen, das sich überprüfen lässt. Das ist der Punkt.</p>
-                        </div>
+                <div class="article-content">
+                    <span class="article-eyebrow">Vergleich</span>
+                    <h2 class="article-title">GHK-Cu und Retinol: Eine Frage des Weges, nicht des Ziels</h2>
+                    <div class="article-body">
+                        <p>Retinol ist in der Anti-Aging-Dermatologie seit Jahrzehnten etabliert. Die Datenlage ist robust, die Wirksamkeit ist belegt, und Dermatologen weltweit empfehlen es als Erstlinientherapie bei lichtbedingter Hautalterung. Es gibt wenige Wirkstoffe in der Kosmetik, die eine vergleichbare wissenschaftliche Grundlage haben.</p>
                     </div>
-                    <label for="toggle-06" class="close-label">Weniger anzeigen</label>
+                    <div class="text-toggle">
+                        <input type="checkbox" id="toggle-04">
+                        <label for="toggle-04" class="toggle-label">Mehr erfahren</label>
+                        <div class="toggle-content">
+                            <div class="article-body">
+                                <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=500&auto=format&fit=crop" alt="Hautalterung" class="inline-thumb">
+                                <p>Trotzdem ist Retinol nicht für jeden die richtige Wahl.</p>
+                                <p>Retinol wirkt über Vitamin-A-Rezeptoren in den Keratinozyten und Fibroblasten. Es beschleunigt die Zellteilung in der Epidermis, erhöht die Kollagensynthese und normalisiert die verhornte Zellschicht. Das sind drei echte, messbare Effekte. Aber der Preis dieser Wirkung ist bekannt: Rötung, Schuppung, Trockenheit — besonders in den ersten Wochen der Anwendung. Die Haut muss sich an Retinol gewöhnen. Bei empfindlicher Haut, Rosacea oder Barrierestörungen kann dieser Eingewöhnungsprozess Wochen dauern und mit erheblichem Komfortverlust verbunden sein. Dazu kommt die erhöhte Photosensibilität: Retinol destabilisiert die Hornschicht vorübergehend, was konsequenten UV-Schutz zwingend macht.</p>
+                                
+                                <p>GHK-Cu erreicht ähnliche Ziele — mehr Kollagen, bessere Hautfestigkeit, verlangsamte Alterung — über einen völlig anderen Weg. Nicht durch Stimulation der Zellproliferation, sondern durch direkte Aktivierung der Fibroblasten. Nicht durch Destabilisierung, sondern durch Stärkung. GHK-Cu hat kein bekanntes Reizpotenzial. Es ist selbst anti-inflammatorisch — es beruhigt aktiv entzündete Haut, anstatt sie zu belasten. Die Barriere wird gestärkt, nicht vorübergehend geschwächt. Photosensibilität entsteht nicht.</p>
+                                
+                                <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=500&auto=format&fit=crop" alt="Routine" class="inline-thumb right">
+                                <p>Für Menschen mit sensibler Haut, Rosacea, aktiven Entzündungen oder einfach einem Lebensstil, der keinen Platz für Eingewöhnungsphasen lässt, ist GHK-Cu keine Kompromisslösung. Es ist die wirksamere Option.</p>
+                                
+                                <p>Für Menschen, die Retinol gut vertragen und gute Ergebnisse damit erzielen, ist die Frage eine andere: Lässt sich GHK-Cu ergänzen? Die Antwort ist ja — aber mit einem wichtigen Vorbehalt. Beide Wirkstoffe sollten nicht in derselben Anwendung kombiniert werden. GHK-Cu ist stabil in einem pH-Bereich von 6 bis 7. Retinol ist am wirksamsten in neutralen bis leicht sauren Formulierungen, aber in Kombination mit anderen Wirkstoffen können Stabilitätsprobleme auftreten. Die einfachere und sicherere Strategie: GHK-Cu morgens, Retinol abends. Zwei Wirkstoffe, zwei Zeitfenster, kein gegenseitiger Einfluss.</p>
+                                <p><em>Das ist kein Kompromiss. Es ist ein optimiertes Protokoll.</em></p>
+                            </div>
+                        </div>
+                        <label for="toggle-04" class="close-label">Weniger anzeigen</label>
+                    </div>
                 </div>
             </div>
         </article>
 
-        <!-- ARTIKEL 07: Qualität -->
+        <!-- ARTIKEL 05 -->
         <article class="article-block">
-            <div class="article-image-container">
-                <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=1200&auto=format&fit=crop" alt="Blaues Serum">
-            </div>
-            <div class="article-content">
-                <span class="article-eyebrow">Qualität</span>
-                <h2 class="article-title">Die Farbe Blau und was sie über ein Produkt verrät</h2>
-                <div class="article-body">
-                    <p>Es gibt einen sehr einfachen, sehr direkten Qualitätstest für jedes Produkt, das GHK-Cu enthält. Man schaut es an.</p>
+            <div class="article-wrapper">
+                <div class="article-image-container">
+                    <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=1200&auto=format&fit=crop" alt="Anti Aging">
                 </div>
-                <div class="text-toggle">
-                    <input type="checkbox" id="toggle-07">
-                    <label for="toggle-07" class="toggle-label">Mehr erfahren</label>
-                    <div class="toggle-content">
-                        <div class="article-body">
-                            <p>Echte GHK-Cu-Lösungen sind blau. Die Farbe entsteht durch das Kupferion (Cu²⁺), das an das Tripeptid Glycyl-L-Histidyl-L-Lysin gebunden ist. Diese Bindung erzeugt eine charakteristische blau-grüne Tönung, die direkt proportional zur Konzentration des aktiven Wirkstoffs ist. Je intensiver die Farbe, desto höher die Konzentration. Das ist keine Ästhetik. Das ist Chemie.</p>
-                            <p>Ein GHK-Cu-Serum, das klar und farblos ist, stellt eine Frage. Entweder ist keine oder kaum GHK-Cu vorhanden — was die Wirksamkeitsversprechen des Produkts unmittelbar in Zweifel zieht. Oder das GHK-Cu wurde durch Formulierungsfehler, falsche Lagerung oder Oxidation degradiert, was dasselbe Ergebnis hat: ein Wirkstoff, der nicht mehr wirkt. In beiden Fällen zahlt man für ein Versprechen, das die Formulierung nicht halten kann.</p>
-                            <p>Das zweite kritische Problem bei GHK-Cu ist die Oxidation. Kupferkomplexe sind empfindlich. Sie reagieren mit Sauerstoff. Ein Tiegel-System oder ein Fläschchen mit Dropper-Top setzt den Wirkstoff bei jeder Anwendung der Luft aus — und beginnt damit, ihn zu degradieren. Das erste Prozent Serum, das man aus einem Tiegel entnimmt, ist frisch und aktiv. Das letzte Prozent, Wochen später, ist das möglicherweise nicht mehr.</p>
-                            <p>BIOCUPRA nutzt ein vollständig luftfreies Dispensersystem. Die Flasche arbeitet mit einem Kolbenmechanismus, der den Inhalt von unten nach oben drückt, ohne dass Luft eindringt. Jede Dosis — die erste wie die letzte — hat Kontakt mit identischer Menge Sauerstoff: keine. Das ist keine Luxusverpackung. Es ist eine Stabilitätsentscheidung.</p>
-                            <p>Transparenz bei Inhaltsstoffen ist im Kosmetikmarkt selten. Die meisten Marken kommunizieren das Vorhandensein eines Wirkstoffs, nicht seine Konzentration. BIOCUPRA kommuniziert beides — Technische Datenblätter mit genauen Konzentrationsangaben sind auf Anfrage erhältlich. Das ist das Gegenteil von Marketing. Es ist die Einladung zu einer informierten Entscheidung.</p>
-                        </div>
+                <div class="article-content">
+                    <span class="article-eyebrow">Anti-Aging</span>
+                    <h2 class="article-title">Das stille Altern der Haut — und warum wir es falsch lesen</h2>
+                    <div class="article-body">
+                        <p>Wir haben eine sehr klare Vorstellung davon, wie Hautalterung aussieht: Falten, Pigmentflecken, Erschlaffung. Das sind die sichtbaren Symptome. Aber sie sind nicht der Anfang. Sie sind das Ende eines Prozesses, der lange vorher begonnen hat — leise, unsichtbar, tief in der Dermis.</p>
                     </div>
-                    <label for="toggle-07" class="close-label">Weniger anzeigen</label>
+                    <div class="text-toggle">
+                        <input type="checkbox" id="toggle-05">
+                        <label for="toggle-05" class="toggle-label">Mehr erfahren</label>
+                        <div class="toggle-content">
+                            <div class="article-body">
+                                <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=500&auto=format&fit=crop" alt="Hautzellen" class="inline-thumb">
+                                <p>Hautalterung ist in Wirklichkeit eine Geschichte sinkender Konzentrationen. Kollagen Typ I und III, die tragenden Strukturproteine der Dermis, werden ab dem 25. Lebensjahr jährlich um etwa ein Prozent weniger produziert. GHK-Cu, der endogene Regenerationsbotstoffe, sinkt parallel dazu ab. Elastin, verantwortlich für die Rückstellfähigkeit der Haut, verliert seine Funktion durch langjährige UV-Exposition und die sinkende Aktivität der produzierenden Fibroblasten. Die Basalmembran zwischen Epidermis und Dermis, die für die Versorgung der Oberhaut mit Nährstoffen entscheidend ist, verflacht.</p>
+                                
+                                <p>All das passiert, bevor eine einzige Falte sichtbar ist.</p>
+                                
+                                <p>Das hat Konsequenzen für den Zeitpunkt, an dem man beginnen sollte, ernsthaft über Hautpflege nachzudenken. Die meisten Menschen beginnen, wenn das sichtbare Altern beginnt. Aber dann ist man bereits im Rückstand. Die Kapazitäten sind schon reduziert, die Strukturen bereits geschwächt. Prävention ist wirksamer als Korrektur — nicht als Marketingaussage, sondern als biologische Tatsache.</p>
+                                
+                                <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=500&auto=format&fit=crop" alt="Jugendliche Haut" class="inline-thumb right">
+                                <p>GHK-Cu ist in diesem Kontext besonders interessant, weil es nicht nur repariert, sondern auch erhält. Bei jüngerer Haut, die noch über funktionsfähige Fibroblasten und intakte Barriere verfügt, unterstützt GHK-Cu die endogene Regenerationskapazität, bevor sie nachlässt. Es ist kein Wirkstoff für eine spezifische Altersgruppe. Es ist ein Wirkstoff für jeden, der versteht, dass Prävention keine Lebensversicherung ist, die man erst mit 50 abschließt.</p>
+                                
+                                <p>Der zweite häufige Denkfehler: Man behandelt Symptome statt Ursachen. Hyaluronsäure-Filler polstern auf. Botulinumtoxin entspannt. Oberflächliche Peelings verbessern die Textur. All das hat seinen Platz — aber keines dieser Verfahren adressiert den Rückgang der Fibroblastenfunktion, der dem sichtbaren Altern zugrunde liegt. GHK-Cu tut das. Es greift am Ursprung an.</p>
+                                <p>Es gibt keine Anti-Aging-Routine, die alles löst. Aber es gibt Prioritäten. Sonnenschutz täglich ist die effektivste Einzelmaßnahme gegen Photoalterung. GHK-Cu topisch ist die direkteste Maßnahme gegen die strukturelle Alterung der Dermis. Alles andere — Peelings, Retinol, Feuchtigkeit — ist Ergänzung.</p>
+                            </div>
+                        </div>
+                        <label for="toggle-05" class="close-label">Weniger anzeigen</label>
+                    </div>
+                </div>
+            </div>
+        </article>
+        
+        <!-- ARTIKEL 06 -->
+        <article class="article-block">
+            <div class="article-wrapper">
+                <div class="article-image-container">
+                    <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=1200&auto=format&fit=crop" alt="Biohacking">
+                </div>
+                <div class="article-content">
+                    <span class="article-eyebrow">Biohacking</span>
+                    <h2 class="article-title">Biohacking trifft Schönheit: Warum die neue Generation Hautpflege anders denkt</h2>
+                    <div class="article-body">
+                        <p>Der Begriff Biohacking klingt nach Silicon Valley, nach Kältekammern um 5 Uhr morgens, nach Trackern, die jeden Herzschlag protokollieren. Das ist ein Teil davon. Aber Biohacking ist im Kern eine Haltung: die Bereitschaft, den eigenen Körper zu verstehen, in ihn zu investieren und auf Basis von Daten statt Versprechen zu entscheiden.</p>
+                    </div>
+                    <div class="text-toggle">
+                        <input type="checkbox" id="toggle-06">
+                        <label for="toggle-06" class="toggle-label">Mehr erfahren</label>
+                        <div class="toggle-content">
+                            <div class="article-body">
+                                <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=500&auto=format&fit=crop" alt="Datenanalyse" class="inline-thumb">
+                                <p>Diese Haltung hat die Hautpflege erreicht — und sie verändert den Markt grundlegend.</p>
+                                <p>Die neue Generation von Beauty-Konsumenten liest Inhaltsstofflisten. Sie googelt Wirkstoffkonzentrationen. Sie fragt, warum ein Produkt funktioniert, nicht nur ob es das tut. Sie ist skeptisch gegenüber Verpackungsversprechen und misstraut Influencer-Reviews ohne Substanz. Diese Käuferinnen und Käufer nennt die Branche „Skintellectuals" — und ihr Anteil wächst schnell.</p>
+                                
+                                <p>Für diese Gruppe sind die Spielregeln des Beauty-Marketings weitgehend wirkungslos. Luxusverpackung macht keinen Eindruck, wenn das Datenblatt fehlt. Celebrity-Endorsements überzeugen nicht, wenn kein Peer-Review dahintersteht. Was überzeugt, ist Transparenz — genaue Konzentrationsangaben, ehrliche Kommunikation über Mechanismen, Bereitschaft, Produkte an wissenschaftlichen Maßstäben messen zu lassen.</p>
+                                
+                                <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=500&auto=format&fit=crop" alt="Inhaltsstoffe" class="inline-thumb right">
+                                <p>GHK-Cu ist der Wirkstoff, der in dieser Gruppe vielleicht mehr Aufmerksamkeit genießt als jeder andere. Nicht wegen Marketing, sondern trotz des Fehlens davon. Die Substanz ist seit Jahrzehnten in der Forschungsliteratur präsent, wird in medizinischen Post-Procedure-Protokollen eingesetzt und hat einen eindeutigen Wirknachweis — all das, ohne je Gegenstand einer großen Beauty-Kampagne gewesen zu sein. Für Biohacker ist das ein Qualitätsmerkmal. Wenn eine Substanz bekannt ist, weil Wissenschaftler über sie schreiben und nicht weil Marken über sie schreiben, ist das ein Signal.</p>
+                                
+                                <p>BIOCUPRA ist für diese Zielgruppe gebaut. Die Konzentrations-Transparenz, die airless Technologie, die klare Positionierung auf einem einzigen Wirkstoff — das sind keine Designentscheidungen. Es sind inhaltliche Positionen. Wir folgen keinen Trends. Wir folgen der Wissenschaft. Das ist ein Versprechen, das sich überprüfen lässt. Das ist der Punkt.</p>
+                            </div>
+                        </div>
+                        <label for="toggle-06" class="close-label">Weniger anzeigen</label>
+                    </div>
                 </div>
             </div>
         </article>
 
-        <!-- ARTIKEL 08: Lifestyle / Routine -->
+        <!-- ARTIKEL 07 -->
         <article class="article-block">
-            <div class="article-image-container">
-                <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1200&auto=format&fit=crop" alt="Routine">
-            </div>
-            <div class="article-content">
-                <span class="article-eyebrow">Routine</span>
-                <h2 class="article-title">Die Intelligenz der einfachen Routine</h2>
-                <div class="article-body">
-                    <p>Es gibt eine Phase in der Beschäftigung mit Hautpflege, in der man beginnt, sich zu verlieren. Man liest über Niacinamid, Azelain-, Mandel- und Glykolsäure, Alpha-Arbutin, Bakuchiol, verschiedene Ceramid-Typen und drei verschiedene Retinoid-Generationen. Man kauft. Man schichtet.</p>
+            <div class="article-wrapper">
+                <div class="article-image-container">
+                    <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=1200&auto=format&fit=crop" alt="Blaues Serum">
                 </div>
-                <div class="text-toggle">
-                    <input type="checkbox" id="toggle-08">
-                    <label for="toggle-08" class="toggle-label">Mehr erfahren</label>
-                    <div class="toggle-content">
-                        <div class="article-body">
-                            <p>Diese Routine-Inflation ist das Gegenteil von Effizienz.</p>
-                            <p>Eine minimale, gut durchdachte Routine mit wenigen, hochwirksamen Wirkstoffen in den richtigen Konzentrationen übertrifft fast immer ein zwölf-Produkte-Protokoll ohne klare Logik. Nicht weil weniger immer mehr ist, sondern weil Wirkstoffe Kontext brauchen — Absorption, Zeit, Stabilität, die richtige Trägertechnologie. Wenn man zu viel auf einmal aufträgt, verändert man pH-Werte, verdünnt Konzentrationen und blockiert Penetrationswege.</p>
-                            <p>Das BIOCUPRA Protokoll ist absichtlich einfach. Reinigung — Serum — Feuchtigkeitspflege — Sonnenschutz. Vier Schritte. Einer davon, das GHK-Cu Serum, ist der eigentliche Wirkstoffschritt. Der Rest existiert, um diesen einen Schritt zu ermöglichen und zu schützen.</p>
-                            <p>Reinigung vorbereitet die Haut — entfernt Zelldetritus, Sebum und Residuen, die die Penetration behindern würden. Das Serum wird auf noch leicht feuchter Haut aufgetragen, weil die Hydratation der Stratum-corneum-Zellen deren Permeabilität erhöht. Peptide penetrieren auf feuchter Haut messbar effizienter als auf trockener. Zwei bis drei Tropfen sind ausreichend — mehr erhöht die Wirksamkeit nicht proportional. Die Feuchtigkeitspflege schützt danach die Barriere und schließt den Wirkstoff ein. Sonnenschutz morgens — nicht optional, nicht verhandelbar.</p>
-                            <p>Abends kann man varieren. GHK-Cu zweimal täglich ist möglich und sinnvoll, besonders bei intensiverer Regenerationsphase. Wer Retinol in seiner Routine hat, kann es abends alternierend einsetzen — an Retinol-Abenden auf GHK-Cu verzichten und umgekehrt. Exfoliante Wirkstoffe wie AHAs oder BHAs sollten nicht gleichzeitig mit GHK-Cu angewendet werden, da der pH-Abfall die Kupferbindung destabilisieren kann.</p>
-                            <p>Das ist keine komplizierte Biochemie. Es ist eine Frage des Respekts vor dem, was man auf die Haut aufträgt: verstehen, wie es wirkt, und die Bedingungen schaffen, unter denen es das tun kann.</p>
-                            <p><em>Weniger entscheiden. Besser entscheiden. Das Ergebnis zeigt den Unterschied.</em></p>
-                             <p><strong>BIOCUPRA — Engineered by Nature. Perfected by Science.</strong></p>
-                        </div>
+                <div class="article-content">
+                    <span class="article-eyebrow">Qualität</span>
+                    <h2 class="article-title">Die Farbe Blau und was sie über ein Produkt verrät</h2>
+                    <div class="article-body">
+                        <p>Es gibt einen sehr einfachen, sehr direkten Qualitätstest für jedes Produkt, das GHK-Cu enthält. Man schaut es an.</p>
                     </div>
-                    <label for="toggle-08" class="close-label">Weniger anzeigen</label>
+                    <div class="text-toggle">
+                        <input type="checkbox" id="toggle-07">
+                        <label for="toggle-07" class="toggle-label">Mehr erfahren</label>
+                        <div class="toggle-content">
+                            <div class="article-body">
+                                <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=500&auto=format&fit=crop" alt="Blaue Flüssigkeit" class="inline-thumb">
+                                <p>Echte GHK-Cu-Lösungen sind blau. Die Farbe entsteht durch das Kupferion (Cu²⁺), das an das Tripeptid Glycyl-L-Histidyl-L-Lysin gebunden ist. Diese Bindung erzeugt eine charakteristische blau-grüne Tönung, die direkt proportional zur Konzentration des aktiven Wirkstoffs ist. Je intensiver die Farbe, desto höher die Konzentration. Das ist keine Ästhetik. Das ist Chemie.</p>
+                                
+                                <p>Ein GHK-Cu-Serum, das klar und farblos ist, stellt eine Frage. Entweder ist keine oder kaum GHK-Cu vorhanden — was die Wirksamkeitsversprechen des Produkts unmittelbar in Zweifel zieht. Oder das GHK-Cu wurde durch Formulierungsfehler, falsche Lagerung oder Oxidation degradiert, was dasselbe Ergebnis hat: ein Wirkstoff, der nicht mehr wirkt. In beiden Fällen zahlt man für ein Versprechen, das die Formulierung nicht halten kann.</p>
+                                
+                                <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=500&auto=format&fit=crop" alt="Airless System" class="inline-thumb right">
+                                <p>Das zweite kritische Problem bei GHK-Cu ist die Oxidation. Kupferkomplexe sind empfindlich. Sie reagieren mit Sauerstoff. Ein Tiegel-System oder ein Fläschchen mit Dropper-Top setzt den Wirkstoff bei jeder Anwendung der Luft aus — und beginnt damit, ihn zu degradieren. Das erste Prozent Serum, das man aus einem Tiegel entnimmt, ist frisch und aktiv. Das letzte Prozent, Wochen später, ist das möglicherweise nicht mehr.</p>
+                                
+                                <p>BIOCUPRA nutzt ein vollständig luftfreies Dispensersystem. Die Flasche arbeitet mit einem Kolbenmechanismus, der den Inhalt von unten nach oben drückt, ohne dass Luft eindringt. Jede Dosis — die erste wie die letzte — hat Kontakt mit identischer Menge Sauerstoff: keine. Das ist keine Luxusverpackung. Es ist eine Stabilitätsentscheidung.</p>
+                                <p>Transparenz bei Inhaltsstoffen ist im Kosmetikmarkt selten. Die meisten Marken kommunizieren das Vorhandensein eines Wirkstoffs, nicht seine Konzentration. BIOCUPRA kommuniziert beides — Technische Datenblätter mit genauen Konzentrationsangaben sind auf Anfrage erhältlich. Das ist das Gegenteil von Marketing. Es ist die Einladung zu einer informierten Entscheidung.</p>
+                            </div>
+                        </div>
+                        <label for="toggle-07" class="close-label">Weniger anzeigen</label>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- ARTIKEL 08 -->
+        <article class="article-block">
+            <div class="article-wrapper">
+                <div class="article-image-container">
+                    <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1200&auto=format&fit=crop" alt="Routine">
+                </div>
+                <div class="article-content">
+                    <span class="article-eyebrow">Routine</span>
+                    <h2 class="article-title">Die Intelligenz der einfachen Routine</h2>
+                    <div class="article-body">
+                        <p>Es gibt eine Phase in der Beschäftigung mit Hautpflege, in der man beginnt, sich zu verlieren. Man liest über Niacinamid, Azelain-, Mandel- und Glykolsäure, Alpha-Arbutin, Bakuchiol, verschiedene Ceramid-Typen und drei verschiedene Retinoid-Generationen. Man kauft. Man schichtet.</p>
+                    </div>
+                    <div class="text-toggle">
+                        <input type="checkbox" id="toggle-08">
+                        <label for="toggle-08" class="toggle-label">Mehr erfahren</label>
+                        <div class="toggle-content">
+                            <div class="article-body">
+                                <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=500&auto=format&fit=crop" alt="Produkte" class="inline-thumb">
+                                <p>Diese Routine-Inflation ist das Gegenteil von Effizienz.</p>
+                                <p>Eine minimale, gut durchdachte Routine mit wenigen, hochwirksamen Wirkstoffen in den richtigen Konzentrationen übertrifft fast immer ein zwölf-Produkte-Protokoll ohne klare Logik. Nicht weil weniger immer mehr ist, sondern weil Wirkstoffe Kontext brauchen — Absorption, Zeit, Stabilität, die richtige Trägertechnologie. Wenn man zu viel auf einmal aufträgt, verändert man pH-Werte, verdünnt Konzentrationen und blockiert Penetrationswege.</p>
+                                
+                                <p>Das BIOCUPRA Protokoll ist absichtlich einfach. Reinigung — Serum — Feuchtigkeitspflege — Sonnenschutz. Vier Schritte. Einer davon, das GHK-Cu Serum, ist der eigentliche Wirkstoffschritt. Der Rest existiert, um diesen einen Schritt zu ermöglichen und zu schützen.</p>
+                                
+                                <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=500&auto=format&fit=crop" alt="Anwendung" class="inline-thumb right">
+                                <p>Reinigung vorbereitet die Haut — entfernt Zelldetritus, Sebum und Residuen, die die Penetration behindern würden. Das Serum wird auf noch leicht feuchter Haut aufgetragen, weil die Hydratation der Stratum-corneum-Zellen deren Permeabilität erhöht. Peptide penetrieren auf feuchter Haut messbar effizienter als auf trockener. Zwei bis drei Tropfen sind ausreichend — mehr erhöht die Wirksamkeit nicht proportional. Die Feuchtigkeitspflege schützt danach die Barriere und schließt den Wirkstoff ein. Sonnenschutz morgens — nicht optional, nicht verhandelbar.</p>
+                                
+                                <p>Abends kann man varieren. GHK-Cu zweimal täglich ist möglich und sinnvoll, besonders bei intensiverer Regenerationsphase. Wer Retinol in seiner Routine hat, kann es abends alternierend einsetzen — an Retinol-Abenden auf GHK-Cu verzichten und umgekehrt. Exfoliante Wirkstoffe wie AHAs oder BHAs sollten nicht gleichzeitig mit GHK-Cu angewendet werden, da der pH-Abfall die Kupferbindung destabilisieren kann.</p>
+                                <p>Das ist keine komplizierte Biochemie. Es ist eine Frage des Respekts vor dem, was man auf die Haut aufträgt: verstehen, wie es wirkt, und die Bedingungen schaffen, unter denen es das tun kann.</p>
+                                <p><em>Weniger entscheiden. Besser entscheiden. Das Ergebnis zeigt den Unterschied.</em></p>
+                                <p><strong>BIOCUPRA — Engineered by Nature. Perfected by Science.</strong></p>
+                            </div>
+                        </div>
+                        <label for="toggle-08" class="close-label">Weniger anzeigen</label>
+                    </div>
                 </div>
             </div>
         </article>
