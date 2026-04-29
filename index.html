@@ -32,7 +32,7 @@
         a { text-decoration: none; color: inherit; }
         button { background: none; border: none; cursor: pointer; font-family: inherit; }
 
-        /* --- HEADER --- */
+        /* --- TOP BANNER --- */
         .top-banner {
             background: var(--color-text);
             color: #fff;
@@ -43,6 +43,7 @@
             text-transform: uppercase;
         }
 
+        /* --- HEADER --- */
         .site-header {
             background: var(--color-bg);
             padding: 20px 0;
@@ -56,6 +57,29 @@
         .logo { font-family: var(--font-serif); font-size: 22px; letter-spacing: 0.15em; font-weight: 400; text-transform: uppercase; display: block; line-height: 1; }
         .logo-sub { display: block; font-size: 9px; letter-spacing: 0.4em; font-weight: 500; color: #888; margin-top: 5px; text-transform: uppercase; }
         .logo-tagline { display: block; font-family: var(--font-serif); font-style: italic; font-size: 12px; color: #555; margin-top: 4px; }
+
+        /* DESKTOP NAVIGATION (Neu hinzugefügt) */
+        .desktop-nav {
+            display: none; /* Standardmäßig ausgeblendet */
+            justify-content: center;
+            gap: 30px;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .desktop-nav a {
+            font-size: 11px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: opacity 0.2s;
+        }
+        .desktop-nav a:hover { opacity: 0.6; }
+
+        @media(min-width: 768px) {
+            .desktop-nav { display: flex; }
+        }
 
         /* --- HERO LAYOUT --- */
         .hero-image-container {
@@ -127,25 +151,10 @@
 
         .text-content p {
             font-size: 15px;
-            line-height: 1.4; /* Enger */
+            line-height: 1.4;
             color: #555;
             margin-bottom: 20px;
         }
-
-        /* Link Styling für Seitenübergänge */
-        .page-link {
-            display: inline-block;
-            margin-top: 20px;
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--color-text);
-            border-bottom: 1px solid var(--color-text);
-            padding-bottom: 2px;
-            transition: opacity 0.2s;
-        }
-        .page-link:hover { opacity: 0.6; }
 
         /* Toggle Mechanism */
         .text-toggle input { display: none; }
@@ -193,16 +202,27 @@
         .inspirations-section { padding-top: 0; padding-bottom: 80px; overflow: hidden; }
         
         .scroll-wrapper {
-            overflow: hidden;
             width: 100%;
             cursor: grab;
             position: relative;
+            /* Auf Desktop normales Scrollen erlauben, auf Mobile Overflow Hidden für JS-Scroll */
+            overflow-x: hidden; 
+        }
+
+        /* Desktop: Natives Scrollen aktivieren, JS deaktiviert */
+        @media(min-width: 768px) {
+            .scroll-wrapper {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .scroll-wrapper::-webkit-scrollbar { height: 4px; }
+            .scroll-wrapper::-webkit-scrollbar-thumb { background: #ccc; }
         }
 
         .scroll-track {
             display: flex;
             width: max-content;
-            transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+            transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1); /* Nur für Mobile relevant */
         }
         .scroll-track.no-transition { transition: none; }
 
@@ -275,7 +295,7 @@
         .footer-links a { display: inline-block; margin: 0 15px; font-size: 12px; color: #666; }
         .dhl-logo { margin-top: 30px; color: #d40511; font-weight: 700; letter-spacing: -1px; font-size: 18px; }
 
-        /* --- STICKY NAV --- */
+        /* --- STICKY NAV (Mobile Only) --- */
         .sticky-nav {
             position: fixed;
             bottom: 0;
@@ -307,9 +327,27 @@
 
     <!-- Header -->
     <header class="site-header">
-        <h1 class="logo">BIOCUPRA<sup>&reg;</sup></h1>
+        <a href="index.html" class="logo">BIOCUPRA<sup>&reg;</sup></a>
         <span class="logo-sub">BERLIN</span>
         <span class="logo-tagline">THE SCIENCE OF SKIN</span>
+        
+        <!-- DESKTOP NAVIGATION (Neu) -->
+        <nav class="desktop-nav">
+            <a href="#">Shop</a>
+            <a href="inspirations.html">Inspirations</a>
+            <a href="#">Wissenschaft</a>
+            <a href="#">Account</a>
+            <a href="#">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:18px; height:18px; vertical-align: middle;">
+                    <circle cx="11" cy="11" r="7"/><line x1="16" y1="16" x2="21" y2="21"/>
+                </svg>
+            </a>
+            <a href="#">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:18px; height:18px; vertical-align: middle;">
+                    <path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M6 6L4 3H2"/>
+                </svg>
+            </a>
+        </nav>
     </header>
 
     <!-- HERO -->
@@ -353,7 +391,8 @@
     <!-- PRODUCTS SECTION -->
     <section class="section products-section">
         <div class="content-text-container" style="margin-bottom: 40px;">
-            <h2 class="main-title" style="font-size: 40px;">BIOCUPRA Bestseller</h2>
+            <!-- Weniger fett (font-weight: 300) -->
+            <h2 class="main-title" style="font-size: 40px; font-weight: 300;">BIOCUPRA Bestseller</h2>
         </div>
         <div class="products-grid">
             <div class="product-card">
@@ -371,7 +410,7 @@
         </div>
     </section>
 
-    <!-- MOLECULE SECTION (WISSENSCHAFT) -->
+    <!-- MOLECULE SECTION -->
     <section class="section">
         <div class="content-image-block">
             <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=1200&auto=format&fit=crop" alt="Molekülstruktur">
@@ -388,14 +427,12 @@
                     <label for="toggle-science" class="toggle-label">Mehr erfahren</label>
                     
                     <div class="toggle-content">
-                        <p>GHK-Cu (Glycyl-L-Histidyl-L-Lysin-Kupfer) ist ein natürlich vorkommendes Tripeptid, das erstmals im menschlichen Plasma isoliert wurde. In junger, gesunder Haut ist es reichlich vorhanden. Mit dem Alter sinkt seine Konzentration.</p>
+                        <p>GHK-Cu (Glycyl-L-Histidyl-L-Lysin-Kupfer) ist ein natürlich vorkommendes Tripeptid, das erstmals im menschlichen Plasma isoliert wurde. In junger, gesunder Haut ist es reichlich vorhanden.</p>
                         <p>Die charakteristische Blaufärbung — verursacht durch das an das Peptid gebundene Kupferion — ist ein einfaches Qualitätsmerkmal. Echte GHK-Cu-Lösungen sind blau. Unsere auch.</p>
                     </div>
                     <label for="toggle-science" class="close-label">Weniger anzeigen</label>
                 </div>
-
-                <!-- LINK ZUR INSPIRATIONS SEITE (DESKTOP & MOBILE) -->
-                <a href="inspirations.html" class="page-link">Alle Artikel & News</a>
+                <!-- Button "Alle Artikel & News" entfernt -->
             </div>
         </div>
     </section>
@@ -403,9 +440,13 @@
     <!-- INSPIRATIONS SLIDER -->
     <section class="section inspirations-section">
         <div class="content-text-container" style="margin-bottom: 40px;">
-            <!-- TITEL IST JETZT EIN LINK -->
-            <a href="inspirations.html" style="color: inherit; text-decoration: none;">
-                <h2 class="main-title" style="font-size: 40px;">Inspirations</h2>
+            <!-- Titel exakt wie auf Inspirations-Seite (Vertikal, Größe, Abstand) -->
+            <a href="inspirations.html" style="color: inherit; text-decoration: none; display: inline-block;">
+                <h2 class="main-title" style="font-family: var(--font-elegant); font-size: 30px; font-weight: 600; letter-spacing: 0.2em; line-height: 1.4; text-transform: uppercase;">
+                    INSPIRATIONS<br>
+                    &<br>
+                    NEWS
+                </h2>
             </a>
         </div>
         
@@ -494,7 +535,7 @@
         <div class="dhl-logo">DHL</div>
     </footer>
 
-    <!-- STICKY NAV -->
+    <!-- STICKY NAV (Mobile) -->
     <nav class="sticky-nav">
         <button class="nav-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M6 6L4 3H2"/></svg>
@@ -507,7 +548,7 @@
         </button>
     </nav>
 
-    <!-- JAVASCRIPT: SLIDESHOW WITH PAUSE -->
+    <!-- JAVASCRIPT: AUTO-SCROLL NUR AUF MOBILE -->
     <script>
         const wrapper = document.getElementById('autoScroller');
         const track = document.getElementById('scrollTrack');
@@ -519,6 +560,7 @@
         const pauseTime = 2000; 
 
         function getNextSlideWidth() {
+            if (cards.length === 0) return 0;
             const card = cards[0];
             const style = card.currentStyle || window.getComputedStyle(card);
             const marginRight = parseInt(style.marginRight);
@@ -527,7 +569,8 @@
 
         function goToSlide(index) {
             const slideWidth = getNextSlideWidth();
-            
+            if (!slideWidth) return;
+
             if (index >= totalCards) {
                 track.classList.add('no-transition');
                 track.style.transform = 'translateX(0px)';
@@ -554,25 +597,24 @@
             clearInterval(intervalId);
         }
 
-        window.addEventListener('load', () => {
-            startSlider();
-        });
+        function handleResize() {
+            // Nur auf Mobile (< 768px) Auto-Scroll aktivieren
+            if (window.innerWidth < 768) {
+                startSlider();
+            } else {
+                stopSlider();
+                // Reset Transform für Desktop Scroll
+                track.style.transform = 'translateX(0px)'; 
+            }
+        }
 
-        wrapper.addEventListener('mouseenter', stopSlider);
-        wrapper.addEventListener('mouseleave', startSlider);
+        // Init
+        window.addEventListener('load', handleResize);
+        window.addEventListener('resize', handleResize);
+
+        // Touch Events (Mobile)
         wrapper.addEventListener('touchstart', stopSlider, { passive: true });
         wrapper.addEventListener('touchend', startSlider, { passive: true });
-
-        let resizeTimer;
-        window.addEventListener('resize', () => {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(() => {
-                track.classList.add('no-transition');
-                track.style.transform = 'translateX(0px)';
-                currentIndex = 0;
-                setTimeout(() => track.classList.remove('no-transition'), 50);
-            }, 250);
-        });
     </script>
 
 </body>
