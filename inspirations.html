@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspirations & News — BIOCUPRA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-text: #1a1a1a;
+            --color-bg: #ffffff;
+            --color-grey: #888;
+            --font-serif: 'DM Serif Display', serif;
+            --font-sans: 'DM Sans', sans-serif;
+            --font-elegant: 'Cormorant Garamond', serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: var(--font-sans); 
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.5; 
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; }
+        button { background: none; border: none; cursor: pointer; font-family: inherit; }
+
+        /* --- HEADER --- */
+        .site-header {
+            background: var(--color-bg);
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo { 
+            font-family: var(--font-serif); 
+            font-size: 24px; 
+            letter-spacing: 0.1em; 
+            font-weight: 400; 
+            text-transform: uppercase; 
+            display: block; 
+            line-height: 1; 
+        }
+        .logo-sub { 
+            display: block; 
+            font-size: 9px; 
+            letter-spacing: 0.5em;
+            font-weight: 600; 
+            color: #888; 
+            margin-top: 6px; 
+            text-transform: uppercase; 
+        }
+        .logo-tagline { 
+            display: block; 
+            font-family: var(--font-serif); 
+            font-style: italic; 
+            font-size: 13px; 
+            color: #555; 
+            margin-top: 4px; 
+        }
+
+        /* --- PAGE INTRO --- */
+        .page-intro {
+            padding: 60px 20px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            /* Verhindert das Abschneiden von Buchstaben am Rand */
+            overflow: visible; 
+        }
+
+        /* HAUPTTITEL: Kleiner (30px), Fett, Vertikal */
+        .main-title {
+            font-family: var(--font-elegant); 
+            font-size: 30px; /* Größe reduziert, damit nichts rausfällt */
+            font-weight: 600; 
+            margin-bottom: 30px;
+            line-height: 1.4;
+            letter-spacing: 0.2em; /* Etwas enger, um sicherzugehen */
+            text-transform: uppercase;
+            color: var(--color-text);
+            /* Verhindert Abschneiden */
+            overflow: visible; 
+            padding: 0 10px; /* Kleiner Sicherheitsabstand */
+        }
+
+        /* Wörter untereinander */
+        .main-title br {
+            display: block;
+            content: "";
+            margin-top: 5px;
+        }
+
+        .intro-text {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.5;
+            font-weight: 400;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* --- ARTICLE LIST --- */
+        .articles-section {
+            padding-bottom: 80px;
+        }
+
+        .article-block {
+            margin-bottom: 80px;
+        }
+
+        .article-image-container {
+            width: 100%;
+            height: 55vh;
+            min-height: 400px;
+            background: #eee;
+            margin-bottom: 40px;
+            overflow: hidden;
+        }
+        .article-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .article-content {
+            padding: 0 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .article-eyebrow {
+            font-family: var(--font-sans);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.2em; 
+            text-transform: uppercase;
+            color: var(--color-grey);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .article-title {
+            font-family: var(--font-serif);
+            font-size: 40px;
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            letter-spacing: -0.02em;
+        }
+
+        .article-body {
+            font-size: 16px; 
+            line-height: 1.45;
+            color: #444;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+        
+        .article-body p { margin-bottom: 1.2em; }
+
+        /* Toggle Mechanism */
+        .text-toggle input { display: none; }
+        
+        /* BUTTON: Eingerahmt */
+        .toggle-label {
+            font-family: var(--font-sans);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            border: 1px solid var(--color-text);
+            padding: 12px 30px;
+            display: inline-block;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            background: transparent;
+            color: var(--color-text);
+        }
+        
+        .toggle-label:hover {
+            background: var(--color-text);
+            color: #fff;
+        }
+        
+        .toggle-content { display: none; margin-top: 30px; text-align: left; }
+        .text-toggle input:checked + label { display: none; }
+        .text-toggle input:checked ~ .toggle-content { display: block; }
+        .text-toggle input:checked ~ .close-label { display: inline-block; margin-top: 25px; }
+        
+        .close-label { 
+            display: none; 
+            font-size: 12px; 
+            font-weight: 600; 
+            cursor: pointer; 
+            border: 1px solid var(--color-text);
+            padding: 12px 30px;
+            transition: all 0.3s ease;
+        }
+        .close-label:hover {
+            background: var(--color-text);
+            color: #fff;
+        }
+
+        /* --- STICKY NAV --- */
+        .sticky-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: space-around;
+            padding: 12px 0;
+            z-index: 1000;
+        }
+        @media(min-width: 768px) { .sticky-nav { display: none; } }
+        .nav-icon svg { width: 22px; height: 22px; stroke: black; }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <a href="index.html" class="logo">BIOCUPRA<sup>&reg;</sup></a>
+        <span class="logo-sub">BERLIN</span>
+        <span class="logo-tagline">THE SCIENCE OF SKIN</span>
+    </header>
+
+    <!-- PAGE INTRO -->
+    <section class="page-intro">
+        <!-- Kleinere Schriftgröße (30px) damit das "S" passt -->
+        <h1 class="main-title">
+            INSPIRATIONS<br>
+            &<br>
+            NEWS
+        </h1>
+        <p class="intro-text">
+            Entdecken Sie die Welt der Hautregeneration. Wissenschaftliche Einblicke, Anwendungstipps und die Geschichte hinter dem Molekül GHK-Cu.
+        </p>
+    </section>
+
+    <!-- ARTICLES LIST -->
+    <section class="articles-section">
+
+        <!-- ARTIKEL 01 -->
+        <article class="article-block">
+            <div class="article-image-container">
+                <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=1200&auto=format&fit=crop" alt="Wissenschaft Labor">
+            </div>
+            <div class="article-content">
+                <span class="article-eyebrow">Wissenschaft</span>
+                <h2 class="article-title">Das Molekül: Die Substanz, die Ihre Haut bereits kennt</h2>
+                <div class="article-body">
+                    <p>Es gibt Wirkstoffe, die von außen in den Körper eingebracht werden, um etwas zu tun, was der Körper von sich aus nicht kann. Und dann gibt es Wirkstoffe, die der Körper selbst produziert — Substanzen, die Teil seiner eigenen Sprache sind. GHK-Cu gehört zur zweiten Kategorie.</p>
+                </div>
+
+                <div class="text-toggle">
+                    <input type="checkbox" id="toggle-01">
+                    <label for="toggle-01" class="toggle-label">Mehr erfahren</label>
+                    
+                    <div class="toggle-content">
+                        <div class="article-body">
+                            <p>GHK-Cu ist die Kurzform für Glycyl-L-Histidyl-L-Lysin-Kupfer. Ein Tripeptid, also eine Verbindung aus drei Aminosäuren, die an ein Kupferion gebunden ist. Das klingt nach Labor. In Wirklichkeit ist es Biologie — diese Verbindung zirkuliert natürlicherweise im menschlichen Blutplasma.</p>
+                            <p>Was GHK-Cu kommuniziert, ist im Wesentlichen ein Signal: *Reparatur.* Wenn Gewebe beschädigt wird, steigt die lokale Konzentration von GHK-Cu. Die Substanz fungiert als Botenstoff, der Fibroblasten aktiviert.</p>
+                            <p>Der Entdecker dieses Mechanismus ist Loren Pickart, ein amerikanischer Biochemiker, der GHK-Cu in den frühen 1970er Jahren erstmals isolierte. Seitdem sind mehr als fünf Jahrzehnte Forschung hinzugekommen: über 600 publizierte Studien.</p>
+                            <p>Die Konzentration von GHK-Cu im Körper ist altersabhängig. Mit 20 Jahren liegt sie bei etwa 200 ng/ml. Mit 60 Jahren ist sie auf unter 80 ng/ml gesunken — eine Reduktion um über 60 Prozent. Die Haut altert nicht, weil sie aufgehört hat zu reparieren. Sie altert, weil das Signal, das Reparatur auslöst, immer schwächer wird.</p>
+                            <p>Die Logik von BIOCUPRA ist schlicht: Man gibt der Haut das Signal zurück. Direkt, topisch, in klinisch relevanter Konzentration. Der Körper erkennt das Molekül. Er antwortet.</p>
+                        </div>
+                    </div>
+                    <label for="toggle-01" class="close-label">Weniger anzeigen</label>
+                </div>
+            </div>
+        </article>
+
+        <!-- ARTIKEL 02 -->
+        <article class="article-block">
+            <div class="article-image-container">
+                <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=1200&auto=format&fit=crop" alt="Hautregeneration">
+            </div>
+            <div class="article-content">
+                <span class="article-eyebrow">Nachsorge</span>
+                <h2 class="article-title">Nach dem Laser: Warum die Nachsorge entscheidet</h2>
+                <div class="article-body">
+                    <p>Laser-Resurfacing gehört zu den wirksamsten Verfahren der ästhetischen Medizin. Das Prinzip ist kontrollierte Verletzung. Man schädigt die Haut gezielt, um den Körper zur Reparatur zu zwingen.</p>
+                </div>
+
+                <div class="text-toggle">
+                    <input type="checkbox" id="toggle-02">
+                    <label for="toggle-02" class="toggle-label">Mehr erfahren</label>
+                    
+                    <div class="toggle-content">
+                        <div class="article-body">
+                            <p>Was in den ersten 48 bis 72 Stunden nach einem Lasereingriff passiert, hat direkten Einfluss auf die Qualität des Endergebnisses. Die Phase der Regeneration ist aktiv, komplex und störbar.</p>
+                            <p>Die meisten Nachsorgeprogramme sind auf Schutz ausgelegt. Das ist reaktiv. GHK-Cu fügt dieser Nachsorge eine entscheidende Dimension hinzu: Es interagiert direkt mit Fibroblasten, beschleunigt die Aktivierung und reguliert den Kollagenabbau.</p>
+                            <p>Eine Studie aus 2024 dokumentierte eine um 25% schnellere epitheliale Regeneration und 30% niedrigere Entzündungsmarker bei Verwendung von GHK-Cu. Kürzere Ausfallzeiten, bessere Ergebnisse.</p>
+                        </div>
+                    </div>
+                    <label for="toggle-02" class="close-label">Weniger anzeigen</label>
+                </div>
+            </div>
+        </article>
+
+        <!-- ARTIKEL 03 -->
+        <article class="article-block">
+            <div class="article-image-container">
+                <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=1200&auto=format&fit=crop" alt="Kollagen Struktur">
+            </div>
+            <div class="article-content">
+                <span class="article-eyebrow">Wirkstoffe</span>
+                <h2 class="article-title">Kollagen trinken vs. Kollagen signalisieren</h2>
+                <div class="article-body">
+                    <p>Der Kollagen-Markt wächst rasant. Kollagenpulver, Shots, Kapseln — die Versprechen sind überall. Der Körper braucht Kollagen. Die Haut verliert Kollagen. Also nimmt man Kollagen zu sich. Die Logik hat einen Fehler.</p>
+                </div>
+
+                <div class="text-toggle">
+                    <input type="checkbox" id="toggle-03">
+                    <label for="toggle-03" class="toggle-label">Mehr erfahren</label>
+                    
+                    <div class="toggle-content">
+                        <div class="article-body">
+                            <p>Kollagen ist ein Strukturprotein — zu groß, um als Ganzes aufgenommen zu werden. Im Magen wird es in Aminosäuren zerlegt.</p>
+                            <p>GHK-Cu arbeitet anders. Es ist kein Baustoff, sondern ein Signal. Ein Botenstoff, der dem Fibroblast mitteilt: Produziere Kollagen. Das Ergebnis ist endogenes Kollagen, direkt in der Dermis synthetisiert.</p>
+                            <p>Wer Kollagen als Supplement nimmt und topisches GHK-Cu anwendet, arbeitet auf zwei verschiedenen Wegen. Aber der direktere Mechanismus ist der topische.</p>
+                        </div>
+                    </div>
+                    <label for="toggle-03" class="close-label">Weniger anzeigen</label>
+                </div>
+            </div>
+        </article>
+        
+        <!-- ARTIKEL 04 -->
+        <article class="article-block">
+            <div class="article-image-container">
+                <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=1200&auto=format&fit=crop" alt="Produkt Vergleich">
+            </div>
+            <div class="article-content">
+                <span class="article-eyebrow">Vergleich</span>
+                <h2 class="article-title">GHK-Cu und Retinol: Eine Frage des Weges</h2>
+                <div class="article-body">
+                    <p>Retinol ist in der Anti-Aging-Dermatologie etabliert. Die Wirksamkeit ist belegt. Trotzdem ist Retinol nicht für jeden die richtige Wahl.</p>
+                </div>
+                <div class="text-toggle">
+                    <input type="checkbox" id="toggle-04">
+                    <label for="toggle-04" class="toggle-label">Mehr erfahren</label>
+                    <div class="toggle-content">
+                        <div class="article-body">
+                             <p>Der Preis der Retinol-Wirkung ist bekannt: Rötung, Schuppung, Trockenheit. Die Haut muss sich gewöhnen.</p>
+                             <p>GHK-Cu erreicht ähnliche Ziele über einen anderen Weg. Nicht durch Stimulation, sondern durch Aktivierung. GHK-Cu hat kein Reizpotenzial, es ist anti-inflammatorisch.</p>
+                             <p>Strategie bei Kombination: GHK-Cu morgens, Retinol abends. Zwei Zeitfenster, kein gegenseitiger Einfluss.</p>
+                        </div>
+                    </div>
+                    <label for="toggle-04" class="close-label">Weniger anzeigen</label>
+                </div>
+            </div>
+        </article>
+
+        <!-- ARTIKEL 05 -->
+        <article class="article-block">
+            <div class="article-image-container">
+                <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=1200&auto=format&fit=crop" alt="Anti Aging">
+            </div>
+            <div class="article-content">
+                <span class="article-eyebrow">Anti-Aging</span>
+                <h2 class="article-title">Das stille Altern der Haut</h2>
+                <div class="article-body">
+                    <p>Wir haben eine klare Vorstellung von Hautalterung: Falten, Pigmentflecken. Das sind die sichtbaren Symptome. Aber sie sind das Ende eines Prozesses, der leise und unsichtbar tief in der Dermis begann.</p>
+                </div>
+                <div class="text-toggle">
+                    <input type="checkbox" id="toggle-05">
+                    <label for="toggle-05" class="toggle-label">Mehr erfahren</label>
+                    <div class="toggle-content">
+                        <div class="article-body">
+                            <p>Hautalterung ist eine Geschichte sinkender Konzentrationen. Kollagen wird ab dem 25. Lebensjahr jährlich um 1% weniger produziert. GHK-Cu sinkt parallel ab.</p>
+                            <p>Prävention ist wirksamer als Korrektur — eine biologische Tatsache. GHK-Cu ist ein Wirkstoff für jeden, der versteht, dass Prävention keine Lebensversicherung ist, die man erst mit 50 abschließt.</p>
+                        </div>
+                    </div>
+                    <label for="toggle-05" class="close-label">Weniger anzeigen</label>
+                </div>
+            </div>
+        </article>
+        
+        <!-- ARTIKEL 06 -->
+        <article class="article-block">
+            <div class="article-image-container">
+                <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=1200&auto=format&fit=crop" alt="Biohacking">
+            </div>
+            <div class="article-content">
+                <span class="article-eyebrow">Biohacking</span>
+                <h2 class="article-title">Warum die neue Generation Hautpflege anders denkt</h2>
+                <div class="article-body">
+                    <p>Biohacking ist eine Haltung: Den Körper verstehen, investieren und auf Basis von Daten entscheiden. Diese Haltung hat die Hautpflege erreicht.</p>
+                </div>
+                <div class="text-toggle">
+                    <input type="checkbox" id="toggle-06">
+                    <label for="toggle-06" class="toggle-label">Mehr erfahren</label>
+                    <div class="toggle-content">
+                        <div class="article-body">
+                            <p>Die neue Generation liest Inhaltsstofflisten. Sie sind skeptisch gegenüber Verpackungsversprechen. Was überzeugt, ist Transparenz.</p>
+                            <p>BIOCUPRA ist für diese Zielgruppe gebaut. Konzentrations-Transparenz, airless Technologie, klare Positionierung. Wir folgen der Wissenschaft.</p>
+                        </div>
+                    </div>
+                    <label for="toggle-06" class="close-label">Weniger anzeigen</label>
+                </div>
+            </div>
+        </article>
+
+        <!-- ARTIKEL 07 -->
+        <article class="article-block">
+            <div class="article-image-container">
+                <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=1200&auto=format&fit=crop" alt="Blaues Serum">
+            </div>
+            <div class="article-content">
+                <span class="article-eyebrow">Qualität</span>
+                <h2 class="article-title">Die Farbe Blau und was sie verrät</h2>
+                <div class="article-body">
+                    <p>Es gibt einen direkten Qualitätstest für GHK-Cu Produkte. Man schaut sie an. Echte GHK-Cu-Lösungen sind blau.</p>
+                </div>
+                <div class="text-toggle">
+                    <input type="checkbox" id="toggle-07">
+                    <label for="toggle-07" class="toggle-label">Mehr erfahren</label>
+                    <div class="toggle-content">
+                        <div class="article-body">
+                            <p>Die Farbe entsteht durch das Kupferion. Ein farbloses Produkt ist oft ein Warnsignal. BIOCUPRA nutzt ein vollständig luftfreies Dispensersystem, um die Oxidation zu verhindern. Das ist keine Luxusverpackung. Es ist eine Stabilitätsentscheidung.</p>
+                        </div>
+                    </div>
+                    <label for="toggle-07" class="close-label">Weniger anzeigen</label>
+                </div>
+            </div>
+        </article>
+
+        <!-- ARTIKEL 08 -->
+        <article class="article-block">
+            <div class="article-image-container">
+                <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1200&auto=format&fit=crop" alt="Routine">
+            </div>
+            <div class="article-content">
+                <span class="article-eyebrow">Routine</span>
+                <h2 class="article-title">Die Intelligenz der einfachen Routine</h2>
+                <div class="article-body">
+                    <p>Routine-Inflation ist das Gegenteil von Effizienz. Eine minimale, gut durchdachte Routine übertrifft fast immer ein 12-Produkte-Protokoll ohne Logik.</p>
+                </div>
+                <div class="text-toggle">
+                    <input type="checkbox" id="toggle-08">
+                    <label for="toggle-08" class="toggle-label">Mehr erfahren</label>
+                    <div class="toggle-content">
+                        <div class="article-body">
+                            <p>Das BIOCUPRA Protokoll ist einfach: Reinigung — Serum — Feuchtigkeit — Schutz. Vier Schritte. Weniger entscheiden. Besser entscheiden.</p>
+                             <p><strong>BIOCUPRA — Engineered by Nature. Perfected by Science.</strong></p>
+                        </div>
+                    </div>
+                    <label for="toggle-08" class="close-label">Weniger anzeigen</label>
+                </div>
+            </div>
+        </article>
+
+    </section>
+
+    <!-- STICKY NAV -->
+    <nav class="sticky-nav">
+        <button class="nav-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M6 6L4 3H2"/></svg>
+        </button>
+        <button class="nav-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <button class="nav-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><line x1="16" y1="16" x2="21" y2="21"/></svg>
+        </button>
+    </nav>
+
+</body>
+</html>
